@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="light" class="scroll-smooth">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gesundheitstafel — Tablero de Consejos Médicos</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible+Next:wght@400;600;700&family=Literata:wght@600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        :root {
+            --bg-main: #fbf1c7;
+            --bg-card: #f2e5bc;
+            --bg-surface: #ebdbb2;
+            --bg-input: #fbf1c7;
+            --border: #d5c4a1;
+            --border-strong: #bdae93;
+            --text-primary: #282828;
+            --text-secondary: #665c54;
+            --accent: #af3a03;
+            --accent-hover: #872a00;
+            --accent-green: #79740e;
+        }
+
+        [data-theme="dark"] {
+            --bg-main: #282828;
+            --bg-card: #3c3836;
+            --bg-surface: #504945;
+            --bg-input: #1d2021;
+            --border: #504945;
+            --border-strong: #665c54;
+            --text-primary: #fbf1c7;
+            --text-secondary: #d5c4a1;
+            --accent: #fe8019;
+            --accent-hover: #d65d0e;
+            --accent-green: #b8bb26;
+        }
+
+        body {
+            background-color: var(--bg-main);
+            color: var(--text-primary);
+            font-family: 'Atkinson Hyperlegible Next', sans-serif;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        h1, h2, h3 {
+            font-family: 'Literata', serif;
+        }
+
+        .theme-card {
+            background-color: var(--bg-card);
+            border-color: var(--border);
+            color: var(--text-primary);
+        }
+
+        .theme-surface {
+            background-color: var(--bg-surface);
+            border-color: var(--border);
+            color: var(--text-primary);
+        }
+
+        .theme-input {
+            background-color: var(--bg-input);
+            border-color: var(--border);
+            color: var(--text-primary);
+        }
+
+        .theme-text-sec {
+            color: var(--text-secondary);
+        }
+
+        .theme-accent {
+            color: var(--accent);
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col justify-between selection:bg-[#af3a03] selection:text-[#fbf1c7]">
+
+    <!-- Backdrop Overlay para el Menú Hamburguesa -->
+    <div id="menuBackdrop" onclick="toggleMenu(false)" class="fixed inset-0 bg-black/60 z-50 hidden opacity-0 transition-opacity duration-300 backdrop-blur-xs"></div>
+
+    <!-- Panel Lateral Deslizable (Índice de Charlas) -->
+    <aside id="sideDrawer" class="fixed top-0 left-0 bottom-0 w-80 max-w-[85vw] theme-card border-r-2 z-50 transform -translate-x-full transition-transform duration-300 flex flex-col shadow-2xl">
+        
+        <!-- Cabecera del Drawer -->
+        <div class="p-5 theme-surface border-b-2 flex items-center justify-between gap-3">
+            <div class="flex items-center gap-2.5">
+                <i class="fa-solid fa-list-ul theme-accent text-lg"></i>
+                <h2 class="text-lg font-bold">Índice de Charlas</h2>
+            </div>
+            <button onclick="toggleMenu(false)" class="w-8 h-8 rounded-lg theme-card border flex items-center justify-center font-bold text-sm hover:border-[#af3a03] transition-all cursor-pointer">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+        </div>
+
+        <!-- Lista de Charlas médicas -->
+        <div class="flex-grow overflow-y-auto p-4 flex flex-col gap-2">
+            <span class="text-xs font-bold theme-text-sec uppercase tracking-wider px-2 py-1">
+                Charlas Disponibles (4)
+            </span>
+            
+                <a href="#card-acusativo" onclick="toggleMenu(false)" class="p-3 rounded-xl theme-surface hover:border-[#af3a03] border transition-all flex items-start gap-3 group">
+                    <span class="w-6 h-6 rounded-md bg-[#af3a03] text-[#fbf1c7] flex items-center justify-center text-xs font-bold shrink-0 mt-0.5">1</span>
+                    <div class="flex flex-col">
+                        <span class="font-bold text-sm group-hover:text-[#af3a03] leading-snug line-clamp-2">Acusativo</span>
+                        <span class="text-[11px] theme-text-sec flex items-center gap-1 mt-1">
+                            <i class="fa-solid fa-circle-play text-[10px]"></i> Ver Video y Audio
+                        </span>
+                    </div>
+                </a>
+                
+
+                <a href="#card-nominativo" onclick="toggleMenu(false)" class="p-3 rounded-xl theme-surface hover:border-[#af3a03] border transition-all flex items-start gap-3 group">
+                    <span class="w-6 h-6 rounded-md bg-[#af3a03] text-[#fbf1c7] flex items-center justify-center text-xs font-bold shrink-0 mt-0.5">2</span>
+                    <div class="flex flex-col">
+                        <span class="font-bold text-sm group-hover:text-[#af3a03] leading-snug line-clamp-2">Nominativo</span>
+                        <span class="text-[11px] theme-text-sec flex items-center gap-1 mt-1">
+                            <i class="fa-solid fa-circle-play text-[10px]"></i> Ver Video y Audio
+                        </span>
+                    </div>
+                </a>
+                
+
+                <a href="#card-genitivo" onclick="toggleMenu(false)" class="p-3 rounded-xl theme-surface hover:border-[#af3a03] border transition-all flex items-start gap-3 group">
+                    <span class="w-6 h-6 rounded-md bg-[#af3a03] text-[#fbf1c7] flex items-center justify-center text-xs font-bold shrink-0 mt-0.5">3</span>
+                    <div class="flex flex-col">
+                        <span class="font-bold text-sm group-hover:text-[#af3a03] leading-snug line-clamp-2">Genitivo</span>
+                        <span class="text-[11px] theme-text-sec flex items-center gap-1 mt-1">
+                            <i class="fa-solid fa-circle-play text-[10px]"></i> Ver Video y Audio
+                        </span>
+                    </div>
+                </a>
+                
+
+                <a href="#card-dativo" onclick="toggleMenu(false)" class="p-3 rounded-xl theme-surface hover:border-[#af3a03] border transition-all flex items-start gap-3 group">
+                    <span class="w-6 h-6 rounded-md bg-[#af3a03] text-[#fbf1c7] flex items-center justify-center text-xs font-bold shrink-0 mt-0.5">4</span>
+                    <div class="flex flex-col">
+                        <span class="font-bold text-sm group-hover:text-[#af3a03] leading-snug line-clamp-2">Dativo</span>
+                        <span class="text-[11px] theme-text-sec flex items-center gap-1 mt-1">
+                            <i class="fa-solid fa-circle-play text-[10px]"></i> Ver Video y Audio
+                        </span>
+                    </div>
+                </a>
+                
+        </div>
+
+        <!-- Pie del Drawer -->
+        <div class="p-4 theme-surface border-t-2 text-center text-xs theme-text-sec flex items-center justify-center gap-2">
+            <i class="fa-solid fa-hospital theme-accent"></i>
+            <span>Gesundheitstafel</span>
+        </div>
+
+    </aside>
+
+    <!-- Header Principal Gruvbox -->
+    <header class="sticky top-0 z-40 theme-card border-b-2 shadow-md transition-colors">
+        <div class="max-w-[1240px] mx-auto px-4 sm:px-6 py-3.5 flex items-center justify-between gap-4">
+            
+            <!-- Izquierda: Menú Hamburguesa + Logo Gesundheitstafel Mockup SVG + Título -->
+            <div class="flex items-center gap-3 sm:gap-4">
+                <!-- Botón Menú Hamburguesa (Arriba a la Izquierda) -->
+                <button id="menuToggleBtn" onclick="toggleMenu()" title="Ver Índice de Charlas" class="px-3 py-2 rounded-xl theme-surface border-2 font-bold text-sm sm:text-base flex items-center gap-2 hover:border-[#af3a03] transition-all cursor-pointer shadow-sm">
+                    <i class="fa-solid fa-bars text-[#af3a03]"></i>
+                    <span class="hidden sm:inline text-xs font-bold uppercase tracking-wider">Índice</span>
+                </button>
+
+                <!-- Logo SVG Oficial de Gesundheitstafel de la carpeta Mockup -->
+                <div class="flex items-center gap-3">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" class="w-10 h-10 rounded-xl shadow-sm shrink-0">
+                        <rect width="120" height="120" rx="28" fill="#1d2021" stroke="#fe8019" stroke-width="3"/>
+                        <circle cx="60" cy="60" r="44" fill="#282828" stroke="#504945" stroke-width="2"/>
+                        <!-- Medical Cross with Soundwave pulses -->
+                        <path d="M52 36 h16 v16 h16 v16 h-16 v16 h-16 v-16 h-16 v-16 h16 z" fill="#fe8019"/>
+                        <circle cx="60" cy="60" r="6" fill="#fbf1c7"/>
+                        <path d="M26 60 Q34 46 42 60" stroke="#b8bb26" stroke-width="3.5" fill="none" stroke-linecap="round"/>
+                        <path d="M78 60 Q86 74 94 60" stroke="#83a598" stroke-width="3.5" fill="none" stroke-linecap="round"/>
+                    </svg>
+                    <div>
+                        <h1 class="text-xl sm:text-2xl font-bold leading-tight">Gesundheitstafel</h1>
+                        <span class="text-[11px] sm:text-xs font-bold theme-accent block -mt-1">Plataforma Médica Comunitaria</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Derecha: Selector de Tema Destacado (Claro / Oscuro) -->
+            <div class="flex items-center gap-3">
+                <button id="themeToggleBtn" onclick="toggleTheme()" title="Cambiar Tema Claro/Oscuro" class="px-3.5 py-2 rounded-xl theme-surface border-2 font-bold text-xs sm:text-sm flex items-center gap-2 hover:border-[#af3a03] transition-all cursor-pointer shadow-sm">
+                    <i id="themeIcon" class="fa-solid fa-sun text-amber-500 text-base"></i>
+                    <span id="themeText" class="font-bold">Modo Claro</span>
+                </button>
+            </div>
+
+        </div>
+    </header>
+
+    <!-- Contenido Principal -->
+    <main class="w-full flex-grow py-8">
+        <div class="max-w-[1240px] mx-auto px-6">
+            
+            <!-- Banner de Cabecera -->
+            <div class="theme-card rounded-2xl p-8 mb-10 border-2 flex flex-col md:flex-row items-center gap-6 shadow-sm transition-colors">
+                <div class="w-16 h-16 rounded-full bg-[#79740e] text-[#fbf1c7] flex items-center justify-center text-3xl font-bold shrink-0 shadow-md">
+                    <i class="fa-solid fa-hospital"></i>
+                </div>
+                <div>
+                    <h2 class="text-3xl font-bold mb-1">Consejos Médicos para su Salud</h2>
+                    <p class="text-base theme-text-sec">Consulte las lecciones preparadas por su médico en formato de video, audio claro y lectura cómoda.</p>
+                </div>
+            </div>
+
+            <!-- Feed Dinámico de Cards de Charlas -->
+            <div id="cardsStream">
+                
+                <article id="card-acusativo" class="scroll-mt-24 flex flex-col theme-card rounded-2xl border-2 shadow-sm overflow-hidden mb-10 transition-colors">
+                    <div class="p-6 lg:p-8 grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+                        
+                        <!-- Columna Izquierda: Lectura y Audio -->
+                        <div class="lg:col-span-7 flex flex-col gap-6">
+                            <div class="flex items-center justify-between gap-4 flex-wrap">
+                                <span class="px-3.5 py-1 rounded-full theme-surface theme-accent font-bold text-sm border flex items-center gap-2">
+                                    <i class="fa-solid fa-stethoscope"></i> Consejo Médico de Salud
+                                </span>
+                                
+                                <!-- Botones para compartir en redes sociales con iconos FontAwesome -->
+                                <div class="flex items-center gap-2 flex-wrap">
+                                    <a href="https://www.facebook.com/sharer/sharer.php?u=#&quote=Gesundheitstafel%3A%20Acusativo" target="_blank" title="Compartir en Facebook" class="px-3.5 py-1.5 rounded-lg theme-surface hover:border-[#af3a03] font-bold text-xs border transition-all flex items-center gap-1.5 shadow-sm">
+                                        <i class="fa-brands fa-facebook text-[#1877F2] text-sm"></i>
+                                        <span>Facebook</span>
+                                    </a>
+                                    <a href="https://www.instagram.com/" target="_blank" title="Compartir en Instagram" class="px-3.5 py-1.5 rounded-lg theme-surface hover:border-[#af3a03] font-bold text-xs border transition-all flex items-center gap-1.5 shadow-sm">
+                                        <i class="fa-brands fa-instagram text-[#E4405F] text-sm"></i>
+                                        <span>Instagram</span>
+                                    </a>
+                                    <a href="https://twitter.com/intent/tweet?text=Gesundheitstafel%3A%20Acusativo%20-%C2%ABEl%20caso%20acusativo%20marca%20el%20objeto%20directo%20de%20una%20oraci%C3%B3n....%C2%BB" target="_blank" title="Compartir en X" class="px-3.5 py-1.5 rounded-lg theme-surface hover:border-[#af3a03] font-bold text-xs border transition-all flex items-center gap-1.5 shadow-sm">
+                                        <i class="fa-brands fa-x-twitter text-sm"></i>
+                                        <span>Twitter/X</span>
+                                    </a>
+                                    <a href="https://api.whatsapp.com/send?text=Gesundheitstafel%3A%20Acusativo%20%C2%ABEl%20caso%20acusativo%20marca%20el%20objeto%20directo%20de%20una%20oraci%C3%B3n....%C2%BB" target="_blank" title="Compartir por WhatsApp" class="px-3.5 py-1.5 rounded-lg theme-surface hover:border-[#af3a03] font-bold text-xs border transition-all flex items-center gap-1.5 shadow-sm">
+                                        <i class="fa-brands fa-whatsapp text-[#25D366] text-sm"></i>
+                                        <span>WhatsApp</span>
+                                    </a>
+                                    <button onclick="copyShareLink('Acusativo')" title="Copiar enlace" class="px-3.5 py-1.5 rounded-lg bg-[#af3a03] hover:bg-[#872a00] text-[#fbf1c7] font-bold text-xs transition-all flex items-center gap-1.5 shadow-sm cursor-pointer">
+                                        <i class="fa-solid fa-link text-xs"></i>
+                                        <span>Enlace</span>
+                                    </button>
+                                </div>
+                            </div>
+
+                            <!-- Título de la charla -->
+                            <h2 class="font-headline-lg text-2xl lg:text-3xl font-bold leading-snug">
+                                Acusativo
+                            </h2>
+
+                            <!-- Texto completo del consejo -->
+                            <div class="theme-input p-6 rounded-xl border-l-4 border-[#af3a03] shadow-inner text-lg leading-relaxed">
+                                <p class="font-semibold">El caso acusativo marca el objeto directo de una oración.</p>
+                            </div>
+
+                            <!-- Reproductor de Audio Grabado -->
+                            <div class="p-4 rounded-xl theme-surface border flex flex-col gap-2">
+                                <div class="flex items-center justify-between text-sm font-bold">
+                                    <span class="flex items-center gap-2 theme-accent">
+                                        <i class="fa-solid fa-microphone"></i> Audio Grabado por su Médico
+                                    </span>
+                                </div>
+                                <audio controls class="w-full mt-1">
+                                    <source src="acusativo/audio_acusativo.wav" type="audio/wav">
+                                    Su navegador no soporta el reproductor de audio.
+                                </audio>
+                            </div>
+                        </div>
+
+                        <!-- Columna Derecha: Reproductor de Video Educativo MP4 -->
+                        <div class="lg:col-span-5 flex flex-col gap-4">
+                            <div class="bg-[#282828] p-3 rounded-2xl border-2 border-[#bdae93] dark:border-[#504945] shadow-md flex flex-col gap-3">
+                                <div class="flex items-center justify-between px-2 text-xs font-bold text-[#ede679]">
+                                    <span class="flex items-center gap-1.5">
+                                        <i class="fa-solid fa-film text-[#fe8019]"></i> Video Educativo con Subtítulos
+                                    </span>
+                                    <span class="bg-[#3c3836] px-2 py-0.5 rounded text-[#fbf1c7] flex items-center gap-1">
+                                        <i class="fa-solid fa-circle-play text-xs text-[#b8bb26]"></i> HD 720p
+                                    </span>
+                                </div>
+                                <video controls preload="metadata" playsinline poster="acusativo/imagen_acusativo.png" class="w-full rounded-xl aspect-video bg-[#000000] object-cover">
+                                    <source src="acusativo/video_acusativo.mp4" type="video/mp4">
+                                    Su navegador no soporta la reproducción de video MP4.
+                                </video>
+                            </div>
+                        </div>
+
+                    </div>
+                </article>
+                
+
+                <article id="card-nominativo" class="scroll-mt-24 flex flex-col theme-card rounded-2xl border-2 shadow-sm overflow-hidden mb-10 transition-colors">
+                    <div class="p-6 lg:p-8 grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+                        
+                        <!-- Columna Izquierda: Lectura y Audio -->
+                        <div class="lg:col-span-7 flex flex-col gap-6">
+                            <div class="flex items-center justify-between gap-4 flex-wrap">
+                                <span class="px-3.5 py-1 rounded-full theme-surface theme-accent font-bold text-sm border flex items-center gap-2">
+                                    <i class="fa-solid fa-stethoscope"></i> Consejo Médico de Salud
+                                </span>
+                                
+                                <!-- Botones para compartir en redes sociales con iconos FontAwesome -->
+                                <div class="flex items-center gap-2 flex-wrap">
+                                    <a href="https://www.facebook.com/sharer/sharer.php?u=#&quote=Gesundheitstafel%3A%20Nominativo" target="_blank" title="Compartir en Facebook" class="px-3.5 py-1.5 rounded-lg theme-surface hover:border-[#af3a03] font-bold text-xs border transition-all flex items-center gap-1.5 shadow-sm">
+                                        <i class="fa-brands fa-facebook text-[#1877F2] text-sm"></i>
+                                        <span>Facebook</span>
+                                    </a>
+                                    <a href="https://www.instagram.com/" target="_blank" title="Compartir en Instagram" class="px-3.5 py-1.5 rounded-lg theme-surface hover:border-[#af3a03] font-bold text-xs border transition-all flex items-center gap-1.5 shadow-sm">
+                                        <i class="fa-brands fa-instagram text-[#E4405F] text-sm"></i>
+                                        <span>Instagram</span>
+                                    </a>
+                                    <a href="https://twitter.com/intent/tweet?text=Gesundheitstafel%3A%20Nominativo%20-%C2%ABEl%20caso%20nominativo%20marca%20al%20sujeto%20de%20la%20oraci%C3%B3n....%C2%BB" target="_blank" title="Compartir en X" class="px-3.5 py-1.5 rounded-lg theme-surface hover:border-[#af3a03] font-bold text-xs border transition-all flex items-center gap-1.5 shadow-sm">
+                                        <i class="fa-brands fa-x-twitter text-sm"></i>
+                                        <span>Twitter/X</span>
+                                    </a>
+                                    <a href="https://api.whatsapp.com/send?text=Gesundheitstafel%3A%20Nominativo%20%C2%ABEl%20caso%20nominativo%20marca%20al%20sujeto%20de%20la%20oraci%C3%B3n....%C2%BB" target="_blank" title="Compartir por WhatsApp" class="px-3.5 py-1.5 rounded-lg theme-surface hover:border-[#af3a03] font-bold text-xs border transition-all flex items-center gap-1.5 shadow-sm">
+                                        <i class="fa-brands fa-whatsapp text-[#25D366] text-sm"></i>
+                                        <span>WhatsApp</span>
+                                    </a>
+                                    <button onclick="copyShareLink('Nominativo')" title="Copiar enlace" class="px-3.5 py-1.5 rounded-lg bg-[#af3a03] hover:bg-[#872a00] text-[#fbf1c7] font-bold text-xs transition-all flex items-center gap-1.5 shadow-sm cursor-pointer">
+                                        <i class="fa-solid fa-link text-xs"></i>
+                                        <span>Enlace</span>
+                                    </button>
+                                </div>
+                            </div>
+
+                            <!-- Título de la charla -->
+                            <h2 class="font-headline-lg text-2xl lg:text-3xl font-bold leading-snug">
+                                Nominativo
+                            </h2>
+
+                            <!-- Texto completo del consejo -->
+                            <div class="theme-input p-6 rounded-xl border-l-4 border-[#af3a03] shadow-inner text-lg leading-relaxed">
+                                <p class="font-semibold">El caso nominativo marca al sujeto de la oración.</p>
+                            </div>
+
+                            <!-- Reproductor de Audio Grabado -->
+                            <div class="p-4 rounded-xl theme-surface border flex flex-col gap-2">
+                                <div class="flex items-center justify-between text-sm font-bold">
+                                    <span class="flex items-center gap-2 theme-accent">
+                                        <i class="fa-solid fa-microphone"></i> Audio Grabado por su Médico
+                                    </span>
+                                </div>
+                                <audio controls class="w-full mt-1">
+                                    <source src="nominativo/audio_nominativo.wav" type="audio/wav">
+                                    Su navegador no soporta el reproductor de audio.
+                                </audio>
+                            </div>
+                        </div>
+
+                        <!-- Columna Derecha: Reproductor de Video Educativo MP4 -->
+                        <div class="lg:col-span-5 flex flex-col gap-4">
+                            <div class="bg-[#282828] p-3 rounded-2xl border-2 border-[#bdae93] dark:border-[#504945] shadow-md flex flex-col gap-3">
+                                <div class="flex items-center justify-between px-2 text-xs font-bold text-[#ede679]">
+                                    <span class="flex items-center gap-1.5">
+                                        <i class="fa-solid fa-film text-[#fe8019]"></i> Video Educativo con Subtítulos
+                                    </span>
+                                    <span class="bg-[#3c3836] px-2 py-0.5 rounded text-[#fbf1c7] flex items-center gap-1">
+                                        <i class="fa-solid fa-circle-play text-xs text-[#b8bb26]"></i> HD 720p
+                                    </span>
+                                </div>
+                                <video controls preload="metadata" playsinline poster="nominativo/imagen_nominativo.png" class="w-full rounded-xl aspect-video bg-[#000000] object-cover">
+                                    <source src="nominativo/video_nominativo.mp4" type="video/mp4">
+                                    Su navegador no soporta la reproducción de video MP4.
+                                </video>
+                            </div>
+                        </div>
+
+                    </div>
+                </article>
+                
+
+                <article id="card-genitivo" class="scroll-mt-24 flex flex-col theme-card rounded-2xl border-2 shadow-sm overflow-hidden mb-10 transition-colors">
+                    <div class="p-6 lg:p-8 grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+                        
+                        <!-- Columna Izquierda: Lectura y Audio -->
+                        <div class="lg:col-span-7 flex flex-col gap-6">
+                            <div class="flex items-center justify-between gap-4 flex-wrap">
+                                <span class="px-3.5 py-1 rounded-full theme-surface theme-accent font-bold text-sm border flex items-center gap-2">
+                                    <i class="fa-solid fa-stethoscope"></i> Consejo Médico de Salud
+                                </span>
+                                
+                                <!-- Botones para compartir en redes sociales con iconos FontAwesome -->
+                                <div class="flex items-center gap-2 flex-wrap">
+                                    <a href="https://www.facebook.com/sharer/sharer.php?u=#&quote=Gesundheitstafel%3A%20Genitivo" target="_blank" title="Compartir en Facebook" class="px-3.5 py-1.5 rounded-lg theme-surface hover:border-[#af3a03] font-bold text-xs border transition-all flex items-center gap-1.5 shadow-sm">
+                                        <i class="fa-brands fa-facebook text-[#1877F2] text-sm"></i>
+                                        <span>Facebook</span>
+                                    </a>
+                                    <a href="https://www.instagram.com/" target="_blank" title="Compartir en Instagram" class="px-3.5 py-1.5 rounded-lg theme-surface hover:border-[#af3a03] font-bold text-xs border transition-all flex items-center gap-1.5 shadow-sm">
+                                        <i class="fa-brands fa-instagram text-[#E4405F] text-sm"></i>
+                                        <span>Instagram</span>
+                                    </a>
+                                    <a href="https://twitter.com/intent/tweet?text=Gesundheitstafel%3A%20Genitivo%20-%C2%ABEl%20caso%20genitivo%20indica%20pertenencia.%20Similar%20a%20la%20preposici%C3%B3n%20%22de%22%20en%20espa%C3%B1ol....%C2%BB" target="_blank" title="Compartir en X" class="px-3.5 py-1.5 rounded-lg theme-surface hover:border-[#af3a03] font-bold text-xs border transition-all flex items-center gap-1.5 shadow-sm">
+                                        <i class="fa-brands fa-x-twitter text-sm"></i>
+                                        <span>Twitter/X</span>
+                                    </a>
+                                    <a href="https://api.whatsapp.com/send?text=Gesundheitstafel%3A%20Genitivo%20%C2%ABEl%20caso%20genitivo%20indica%20pertenencia.%20Similar%20a%20la%20preposici%C3%B3n%20%22de%22%20en%20espa%C3%B1ol....%C2%BB" target="_blank" title="Compartir por WhatsApp" class="px-3.5 py-1.5 rounded-lg theme-surface hover:border-[#af3a03] font-bold text-xs border transition-all flex items-center gap-1.5 shadow-sm">
+                                        <i class="fa-brands fa-whatsapp text-[#25D366] text-sm"></i>
+                                        <span>WhatsApp</span>
+                                    </a>
+                                    <button onclick="copyShareLink('Genitivo')" title="Copiar enlace" class="px-3.5 py-1.5 rounded-lg bg-[#af3a03] hover:bg-[#872a00] text-[#fbf1c7] font-bold text-xs transition-all flex items-center gap-1.5 shadow-sm cursor-pointer">
+                                        <i class="fa-solid fa-link text-xs"></i>
+                                        <span>Enlace</span>
+                                    </button>
+                                </div>
+                            </div>
+
+                            <!-- Título de la charla -->
+                            <h2 class="font-headline-lg text-2xl lg:text-3xl font-bold leading-snug">
+                                Genitivo
+                            </h2>
+
+                            <!-- Texto completo del consejo -->
+                            <div class="theme-input p-6 rounded-xl border-l-4 border-[#af3a03] shadow-inner text-lg leading-relaxed">
+                                <p class="font-semibold">El caso genitivo indica pertenencia. Similar a la preposición "de" en español.</p>
+                            </div>
+
+                            <!-- Reproductor de Audio Grabado -->
+                            <div class="p-4 rounded-xl theme-surface border flex flex-col gap-2">
+                                <div class="flex items-center justify-between text-sm font-bold">
+                                    <span class="flex items-center gap-2 theme-accent">
+                                        <i class="fa-solid fa-microphone"></i> Audio Grabado por su Médico
+                                    </span>
+                                </div>
+                                <audio controls class="w-full mt-1">
+                                    <source src="genitivo/audio_genitivo.wav" type="audio/wav">
+                                    Su navegador no soporta el reproductor de audio.
+                                </audio>
+                            </div>
+                        </div>
+
+                        <!-- Columna Derecha: Reproductor de Video Educativo MP4 -->
+                        <div class="lg:col-span-5 flex flex-col gap-4">
+                            <div class="bg-[#282828] p-3 rounded-2xl border-2 border-[#bdae93] dark:border-[#504945] shadow-md flex flex-col gap-3">
+                                <div class="flex items-center justify-between px-2 text-xs font-bold text-[#ede679]">
+                                    <span class="flex items-center gap-1.5">
+                                        <i class="fa-solid fa-film text-[#fe8019]"></i> Video Educativo con Subtítulos
+                                    </span>
+                                    <span class="bg-[#3c3836] px-2 py-0.5 rounded text-[#fbf1c7] flex items-center gap-1">
+                                        <i class="fa-solid fa-circle-play text-xs text-[#b8bb26]"></i> HD 720p
+                                    </span>
+                                </div>
+                                <video controls preload="metadata" playsinline poster="genitivo/imagen_genitivo.jpg" class="w-full rounded-xl aspect-video bg-[#000000] object-cover">
+                                    <source src="genitivo/video_genitivo.mp4" type="video/mp4">
+                                    Su navegador no soporta la reproducción de video MP4.
+                                </video>
+                            </div>
+                        </div>
+
+                    </div>
+                </article>
+                
+
+                <article id="card-dativo" class="scroll-mt-24 flex flex-col theme-card rounded-2xl border-2 shadow-sm overflow-hidden mb-10 transition-colors">
+                    <div class="p-6 lg:p-8 grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+                        
+                        <!-- Columna Izquierda: Lectura y Audio -->
+                        <div class="lg:col-span-7 flex flex-col gap-6">
+                            <div class="flex items-center justify-between gap-4 flex-wrap">
+                                <span class="px-3.5 py-1 rounded-full theme-surface theme-accent font-bold text-sm border flex items-center gap-2">
+                                    <i class="fa-solid fa-stethoscope"></i> Consejo Médico de Salud
+                                </span>
+                                
+                                <!-- Botones para compartir en redes sociales con iconos FontAwesome -->
+                                <div class="flex items-center gap-2 flex-wrap">
+                                    <a href="https://www.facebook.com/sharer/sharer.php?u=#&quote=Gesundheitstafel%3A%20Dativo" target="_blank" title="Compartir en Facebook" class="px-3.5 py-1.5 rounded-lg theme-surface hover:border-[#af3a03] font-bold text-xs border transition-all flex items-center gap-1.5 shadow-sm">
+                                        <i class="fa-brands fa-facebook text-[#1877F2] text-sm"></i>
+                                        <span>Facebook</span>
+                                    </a>
+                                    <a href="https://www.instagram.com/" target="_blank" title="Compartir en Instagram" class="px-3.5 py-1.5 rounded-lg theme-surface hover:border-[#af3a03] font-bold text-xs border transition-all flex items-center gap-1.5 shadow-sm">
+                                        <i class="fa-brands fa-instagram text-[#E4405F] text-sm"></i>
+                                        <span>Instagram</span>
+                                    </a>
+                                    <a href="https://twitter.com/intent/tweet?text=Gesundheitstafel%3A%20Dativo%20-%C2%AB%C2%BFC%C3%B3mo%20funciona%20el%20caso%20dativo%20en%20la%20lengua%20alemana%3F...%C2%BB" target="_blank" title="Compartir en X" class="px-3.5 py-1.5 rounded-lg theme-surface hover:border-[#af3a03] font-bold text-xs border transition-all flex items-center gap-1.5 shadow-sm">
+                                        <i class="fa-brands fa-x-twitter text-sm"></i>
+                                        <span>Twitter/X</span>
+                                    </a>
+                                    <a href="https://api.whatsapp.com/send?text=Gesundheitstafel%3A%20Dativo%20%C2%AB%C2%BFC%C3%B3mo%20funciona%20el%20caso%20dativo%20en%20la%20lengua%20alemana%3F...%C2%BB" target="_blank" title="Compartir por WhatsApp" class="px-3.5 py-1.5 rounded-lg theme-surface hover:border-[#af3a03] font-bold text-xs border transition-all flex items-center gap-1.5 shadow-sm">
+                                        <i class="fa-brands fa-whatsapp text-[#25D366] text-sm"></i>
+                                        <span>WhatsApp</span>
+                                    </a>
+                                    <button onclick="copyShareLink('Dativo')" title="Copiar enlace" class="px-3.5 py-1.5 rounded-lg bg-[#af3a03] hover:bg-[#872a00] text-[#fbf1c7] font-bold text-xs transition-all flex items-center gap-1.5 shadow-sm cursor-pointer">
+                                        <i class="fa-solid fa-link text-xs"></i>
+                                        <span>Enlace</span>
+                                    </button>
+                                </div>
+                            </div>
+
+                            <!-- Título de la charla -->
+                            <h2 class="font-headline-lg text-2xl lg:text-3xl font-bold leading-snug">
+                                Dativo
+                            </h2>
+
+                            <!-- Texto completo del consejo -->
+                            <div class="theme-input p-6 rounded-xl border-l-4 border-[#af3a03] shadow-inner text-lg leading-relaxed">
+                                <p class="font-semibold">¿Cómo funciona el caso dativo en la lengua alemana?</p>
+                            </div>
+
+                            <!-- Reproductor de Audio Grabado -->
+                            <div class="p-4 rounded-xl theme-surface border flex flex-col gap-2">
+                                <div class="flex items-center justify-between text-sm font-bold">
+                                    <span class="flex items-center gap-2 theme-accent">
+                                        <i class="fa-solid fa-microphone"></i> Audio Grabado por su Médico
+                                    </span>
+                                </div>
+                                <audio controls class="w-full mt-1">
+                                    <source src="dativo/audio_dativo.wav" type="audio/wav">
+                                    Su navegador no soporta el reproductor de audio.
+                                </audio>
+                            </div>
+                        </div>
+
+                        <!-- Columna Derecha: Reproductor de Video Educativo MP4 -->
+                        <div class="lg:col-span-5 flex flex-col gap-4">
+                            <div class="bg-[#282828] p-3 rounded-2xl border-2 border-[#bdae93] dark:border-[#504945] shadow-md flex flex-col gap-3">
+                                <div class="flex items-center justify-between px-2 text-xs font-bold text-[#ede679]">
+                                    <span class="flex items-center gap-1.5">
+                                        <i class="fa-solid fa-film text-[#fe8019]"></i> Video Educativo con Subtítulos
+                                    </span>
+                                    <span class="bg-[#3c3836] px-2 py-0.5 rounded text-[#fbf1c7] flex items-center gap-1">
+                                        <i class="fa-solid fa-circle-play text-xs text-[#b8bb26]"></i> HD 720p
+                                    </span>
+                                </div>
+                                <video controls preload="metadata" playsinline poster="dativo/imagen_dativo.jpg" class="w-full rounded-xl aspect-video bg-[#000000] object-cover">
+                                    <source src="dativo/video_dativo.mp4" type="video/mp4">
+                                    Su navegador no soporta la reproducción de video MP4.
+                                </video>
+                            </div>
+                        </div>
+
+                    </div>
+                </article>
+                
+            </div>
+
+        </div>
+    </main>
+
+    <!-- Footer Gruvbox -->
+    <footer class="theme-card border-t-2 py-6 text-center transition-colors">
+        <div class="max-w-[1240px] mx-auto px-6 text-sm theme-text-sec flex items-center justify-center gap-2">
+            <i class="fa-solid fa-heart-pulse theme-accent"></i>
+            <p>Gesundheitstafel • Diseñado para la lectura cómoda y la transmisión clara del conocimiento médico.</p>
+        </div>
+    </footer>
+
+    <script>
+        function copyShareLink(title) {
+            const url = window.location.href;
+            navigator.clipboard.writeText(url);
+            alert('¡Enlace de "' + title + '" copiado al portapapeles!');
+        }
+
+        function toggleMenu(forceState) {
+            const drawer = document.getElementById('sideDrawer');
+            const backdrop = document.getElementById('menuBackdrop');
+            if (!drawer || !backdrop) return;
+
+            const isOpen = drawer.classList.contains('translate-x-0');
+            const shouldOpen = forceState !== undefined ? forceState : !isOpen;
+
+            if (shouldOpen) {
+                backdrop.classList.remove('hidden');
+                setTimeout(() => backdrop.classList.remove('opacity-0'), 10);
+                drawer.classList.remove('-translate-x-full');
+                drawer.classList.add('translate-x-0');
+            } else {
+                drawer.classList.remove('translate-x-0');
+                drawer.classList.add('-translate-x-full');
+                backdrop.classList.add('opacity-0');
+                setTimeout(() => backdrop.classList.add('hidden'), 300);
+            }
+        }
+
+        function initTheme() {
+            const savedTheme = localStorage.getItem('gt_theme') || 'light';
+            setTheme(savedTheme);
+        }
+
+        function toggleTheme() {
+            const currentTheme = document.documentElement.getAttribute('data-theme') || 'light';
+            const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+            setTheme(newTheme);
+        }
+
+        function setTheme(theme) {
+            document.documentElement.setAttribute('data-theme', theme);
+            localStorage.setItem('gt_theme', theme);
+            const icon = document.getElementById('themeIcon');
+            const text = document.getElementById('themeText');
+            if (theme === 'dark') {
+                if (icon) icon.className = 'fa-solid fa-moon text-blue-300 text-base';
+                if (text) text.textContent = 'Modo Oscuro';
+            } else {
+                if (icon) icon.className = 'fa-solid fa-sun text-amber-500 text-base';
+                if (text) text.textContent = 'Modo Claro';
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', initTheme);
+    </script>
+</body>
+</html>
