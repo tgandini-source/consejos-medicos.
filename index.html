@@ -101,8 +101,19 @@
                 Charlas Disponibles (19)
             </span>
             
-                <a href="#card-qué-es-el-dativo" onclick="toggleMenu(false)" class="p-3 rounded-xl theme-surface hover:border-[#af3a03] border transition-all flex items-start gap-3 group">
+                <a href="#card-frio" onclick="toggleMenu(false)" class="p-3 rounded-xl theme-surface hover:border-[#af3a03] border transition-all flex items-start gap-3 group">
                     <span class="w-6 h-6 rounded-md bg-[#af3a03] text-[#fbf1c7] flex items-center justify-center text-xs font-bold shrink-0 mt-0.5">1</span>
+                    <div class="flex flex-col">
+                        <span class="font-bold text-sm group-hover:text-[#af3a03] leading-snug line-clamp-2">Frio</span>
+                        <span class="text-[11px] theme-text-sec flex items-center gap-1 mt-1">
+                            <i class="fa-solid fa-circle-play text-[10px]"></i> Ver Video y Audio
+                        </span>
+                    </div>
+                </a>
+                
+
+                <a href="#card-qué-es-el-dativo" onclick="toggleMenu(false)" class="p-3 rounded-xl theme-surface hover:border-[#af3a03] border transition-all flex items-start gap-3 group">
+                    <span class="w-6 h-6 rounded-md bg-[#af3a03] text-[#fbf1c7] flex items-center justify-center text-xs font-bold shrink-0 mt-0.5">2</span>
                     <div class="flex flex-col">
                         <span class="font-bold text-sm group-hover:text-[#af3a03] leading-snug line-clamp-2">Qué es el dativo</span>
                         <span class="text-[11px] theme-text-sec flex items-center gap-1 mt-1">
@@ -113,7 +124,7 @@
                 
 
                 <a href="#card-dativ" onclick="toggleMenu(false)" class="p-3 rounded-xl theme-surface hover:border-[#af3a03] border transition-all flex items-start gap-3 group">
-                    <span class="w-6 h-6 rounded-md bg-[#af3a03] text-[#fbf1c7] flex items-center justify-center text-xs font-bold shrink-0 mt-0.5">2</span>
+                    <span class="w-6 h-6 rounded-md bg-[#af3a03] text-[#fbf1c7] flex items-center justify-center text-xs font-bold shrink-0 mt-0.5">3</span>
                     <div class="flex flex-col">
                         <span class="font-bold text-sm group-hover:text-[#af3a03] leading-snug line-clamp-2">Dativ</span>
                         <span class="text-[11px] theme-text-sec flex items-center gap-1 mt-1">
@@ -124,17 +135,6 @@
                 
 
                 <a href="#card-dativo2-1" onclick="toggleMenu(false)" class="p-3 rounded-xl theme-surface hover:border-[#af3a03] border transition-all flex items-start gap-3 group">
-                    <span class="w-6 h-6 rounded-md bg-[#af3a03] text-[#fbf1c7] flex items-center justify-center text-xs font-bold shrink-0 mt-0.5">3</span>
-                    <div class="flex flex-col">
-                        <span class="font-bold text-sm group-hover:text-[#af3a03] leading-snug line-clamp-2">Dativo2</span>
-                        <span class="text-[11px] theme-text-sec flex items-center gap-1 mt-1">
-                            <i class="fa-solid fa-circle-play text-[10px]"></i> Ver Video y Audio
-                        </span>
-                    </div>
-                </a>
-                
-
-                <a href="#card-dativo2" onclick="toggleMenu(false)" class="p-3 rounded-xl theme-surface hover:border-[#af3a03] border transition-all flex items-start gap-3 group">
                     <span class="w-6 h-6 rounded-md bg-[#af3a03] text-[#fbf1c7] flex items-center justify-center text-xs font-bold shrink-0 mt-0.5">4</span>
                     <div class="flex flex-col">
                         <span class="font-bold text-sm group-hover:text-[#af3a03] leading-snug line-clamp-2">Dativo2</span>
@@ -378,10 +378,94 @@
             <!-- Feed Dinámico de Cards de Charlas -->
             <div id="cardsStream">
                 
+                <article id="card-frio" class="scroll-mt-24 flex flex-col theme-card rounded-2xl border-2 shadow-sm overflow-hidden mb-10 transition-colors">
+                    <div class="p-6 lg:p-8 grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+                        
+                        <!-- Columna Izquierda: Lectura y Texto Completo -->
+                        <div class="lg:col-span-7 flex flex-col gap-6">
+                            <div class="flex items-center justify-between gap-4 flex-wrap">
+                                <span class="px-3.5 py-1 rounded-full theme-surface theme-accent font-bold text-sm border flex items-center gap-2">
+                                    <i class="fa-solid fa-stethoscope"></i> Consejo Médico de Salud
+                                </span>
+                                
+                                <!-- Botones para compartir en redes sociales con iconos FontAwesome -->
+                                <div class="flex items-center gap-2 flex-wrap">
+                                    <a href="https://www.facebook.com/sharer/sharer.php?u=#&quote=Gesundheitstafel%3A%20Frio" target="_blank" title="Compartir en Facebook" class="px-3.5 py-1.5 rounded-lg theme-surface hover:border-[#af3a03] font-bold text-xs border transition-all flex items-center gap-1.5 shadow-sm">
+                                        <i class="fa-brands fa-facebook text-[#1877F2] text-sm"></i>
+                                        <span>Facebook</span>
+                                    </a>
+                                    <a href="https://www.instagram.com/" target="_blank" title="Compartir en Instagram" class="px-3.5 py-1.5 rounded-lg theme-surface hover:border-[#af3a03] font-bold text-xs border transition-all flex items-center gap-1.5 shadow-sm">
+                                        <i class="fa-brands fa-instagram text-[#E4405F] text-sm"></i>
+                                        <span>Instagram</span>
+                                    </a>
+                                    <a href="https://twitter.com/intent/tweet?text=Gesundheitstafel%3A%20Frio%20-%C2%ABBoca%20pecho%20frio...%C2%BB" target="_blank" title="Compartir en X" class="px-3.5 py-1.5 rounded-lg theme-surface hover:border-[#af3a03] font-bold text-xs border transition-all flex items-center gap-1.5 shadow-sm">
+                                        <i class="fa-brands fa-x-twitter text-sm"></i>
+                                        <span>Twitter/X</span>
+                                    </a>
+                                    <a href="https://api.whatsapp.com/send?text=Gesundheitstafel%3A%20Frio%20%C2%ABBoca%20pecho%20frio...%C2%BB" target="_blank" title="Compartir por WhatsApp" class="px-3.5 py-1.5 rounded-lg theme-surface hover:border-[#af3a03] font-bold text-xs border transition-all flex items-center gap-1.5 shadow-sm">
+                                        <i class="fa-brands fa-whatsapp text-[#25D366] text-sm"></i>
+                                        <span>WhatsApp</span>
+                                    </a>
+                                    <button onclick="copyShareLink('Frio')" title="Copiar enlace" class="px-3.5 py-1.5 rounded-lg bg-[#af3a03] hover:bg-[#872a00] text-[#fbf1c7] font-bold text-xs transition-all flex items-center gap-1.5 shadow-sm cursor-pointer">
+                                        <i class="fa-solid fa-link text-xs"></i>
+                                        <span>Enlace</span>
+                                    </button>
+                                </div>
+                            </div>
+
+                            <!-- Título de la charla -->
+                            <h2 class="font-headline-lg text-2xl lg:text-3xl font-bold leading-snug">
+                                Frio
+                            </h2>
+
+                            <!-- Texto completo del consejo -->
+                            <div class="theme-input p-6 rounded-xl border-l-4 border-[#af3a03] shadow-inner text-lg leading-relaxed">
+                                <p class="font-semibold">Boca pecho frio</p>
+                            </div>
+                        </div>
+
+                        <!-- Columna Derecha: Reproductor de Video Educativo MP4 + Reproductor de Audio -->
+                        <div class="lg:col-span-5 flex flex-col gap-5">
+                            
+                            <!-- Video Player Box -->
+                            <div class="bg-[#282828] p-3.5 rounded-2xl border-2 border-[#bdae93] dark:border-[#504945] shadow-md flex flex-col gap-3">
+                                <div class="flex items-center justify-between px-2 text-xs font-bold text-[#ede679]">
+                                    <span class="flex items-center gap-1.5">
+                                        <i class="fa-solid fa-film text-[#fe8019]"></i> Video Educativo con Leyenda
+                                    </span>
+                                    <span class="bg-[#3c3836] px-2 py-0.5 rounded text-[#fbf1c7] flex items-center gap-1">
+                                        <i class="fa-solid fa-circle-play text-xs text-[#b8bb26]"></i> HD 720p
+                                    </span>
+                                </div>
+                                <video controls preload="metadata" playsinline poster="frio/imagen_frio.jpg" class="w-full rounded-xl aspect-video bg-[#000000] object-cover">
+                                    <source src="frio/video_frio.mp4" type="video/mp4">
+                                    Su navegador no soporta la reproducción de video MP4.
+                                </video>
+                            </div>
+
+                            <!-- Reproductor de Audio Grabado (Debajo del Video) -->
+                            <div class="p-4 rounded-xl theme-surface border flex flex-col gap-2 shadow-sm">
+                                <div class="flex items-center justify-between text-sm font-bold">
+                                    <span class="flex items-center gap-2 theme-accent">
+                                        <i class="fa-solid fa-microphone"></i> Audio Grabado por su Médico
+                                    </span>
+                                </div>
+                                <audio controls class="w-full mt-1">
+                                    <source src="frio/audio_frio.wav" type="audio/wav">
+                                    Su navegador no soporta el reproductor de audio.
+                                </audio>
+                            </div>
+
+                        </div>
+
+                    </div>
+                </article>
+                
+
                 <article id="card-qué-es-el-dativo" class="scroll-mt-24 flex flex-col theme-card rounded-2xl border-2 shadow-sm overflow-hidden mb-10 transition-colors">
                     <div class="p-6 lg:p-8 grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
                         
-                        <!-- Columna Izquierda: Lectura y Audio -->
+                        <!-- Columna Izquierda: Lectura y Texto Completo -->
                         <div class="lg:col-span-7 flex flex-col gap-6">
                             <div class="flex items-center justify-between gap-4 flex-wrap">
                                 <span class="px-3.5 py-1 rounded-full theme-surface theme-accent font-bold text-sm border flex items-center gap-2">
@@ -430,27 +514,16 @@ El uso del dativo era común entre las primeras lenguas indoeuropeas y continúa
 
 En español los nombres no se declinan por caso, solo por género y número, y solo queda un residuo de flexión para el dativo en los pronombres personales de tercera persona: está aún morfológicamente marcado en los pronombres le y les, que indican en la mayoría de los dialectos el objeto indirecto: Yo le vi las orejas (a él o a ella), Yo les di de comer (a ellos o ellas). No obstante, en varios dialectos del español hay usos no estándar de estos pronombres y de los de objeto directo (lo, la, los, las)</p>
                             </div>
-
-                            <!-- Reproductor de Audio Grabado -->
-                            <div class="p-4 rounded-xl theme-surface border flex flex-col gap-2">
-                                <div class="flex items-center justify-between text-sm font-bold">
-                                    <span class="flex items-center gap-2 theme-accent">
-                                        <i class="fa-solid fa-microphone"></i> Audio Grabado por su Médico
-                                    </span>
-                                </div>
-                                <audio controls class="w-full mt-1">
-                                    <source src="qué-es-el-dativo/audio_qué-es-el-dativo.wav" type="audio/wav">
-                                    Su navegador no soporta el reproductor de audio.
-                                </audio>
-                            </div>
                         </div>
 
-                        <!-- Columna Derecha: Reproductor de Video Educativo MP4 -->
-                        <div class="lg:col-span-5 flex flex-col gap-4">
-                            <div class="bg-[#282828] p-3 rounded-2xl border-2 border-[#bdae93] dark:border-[#504945] shadow-md flex flex-col gap-3">
+                        <!-- Columna Derecha: Reproductor de Video Educativo MP4 + Reproductor de Audio -->
+                        <div class="lg:col-span-5 flex flex-col gap-5">
+                            
+                            <!-- Video Player Box -->
+                            <div class="bg-[#282828] p-3.5 rounded-2xl border-2 border-[#bdae93] dark:border-[#504945] shadow-md flex flex-col gap-3">
                                 <div class="flex items-center justify-between px-2 text-xs font-bold text-[#ede679]">
                                     <span class="flex items-center gap-1.5">
-                                        <i class="fa-solid fa-film text-[#fe8019]"></i> Video Educativo con Subtítulos
+                                        <i class="fa-solid fa-film text-[#fe8019]"></i> Video Educativo con Leyenda
                                     </span>
                                     <span class="bg-[#3c3836] px-2 py-0.5 rounded text-[#fbf1c7] flex items-center gap-1">
                                         <i class="fa-solid fa-circle-play text-xs text-[#b8bb26]"></i> HD 720p
@@ -461,6 +534,20 @@ En español los nombres no se declinan por caso, solo por género y número, y s
                                     Su navegador no soporta la reproducción de video MP4.
                                 </video>
                             </div>
+
+                            <!-- Reproductor de Audio Grabado (Debajo del Video) -->
+                            <div class="p-4 rounded-xl theme-surface border flex flex-col gap-2 shadow-sm">
+                                <div class="flex items-center justify-between text-sm font-bold">
+                                    <span class="flex items-center gap-2 theme-accent">
+                                        <i class="fa-solid fa-microphone"></i> Audio Grabado por su Médico
+                                    </span>
+                                </div>
+                                <audio controls class="w-full mt-1">
+                                    <source src="qué-es-el-dativo/audio_qué-es-el-dativo.wav" type="audio/wav">
+                                    Su navegador no soporta el reproductor de audio.
+                                </audio>
+                            </div>
+
                         </div>
 
                     </div>
@@ -470,7 +557,7 @@ En español los nombres no se declinan por caso, solo por género y número, y s
                 <article id="card-dativ" class="scroll-mt-24 flex flex-col theme-card rounded-2xl border-2 shadow-sm overflow-hidden mb-10 transition-colors">
                     <div class="p-6 lg:p-8 grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
                         
-                        <!-- Columna Izquierda: Lectura y Audio -->
+                        <!-- Columna Izquierda: Lectura y Texto Completo -->
                         <div class="lg:col-span-7 flex flex-col gap-6">
                             <div class="flex items-center justify-between gap-4 flex-wrap">
                                 <span class="px-3.5 py-1 rounded-full theme-surface theme-accent font-bold text-sm border flex items-center gap-2">
@@ -511,27 +598,16 @@ En español los nombres no se declinan por caso, solo por género y número, y s
                             <div class="theme-input p-6 rounded-xl border-l-4 border-[#af3a03] shadow-inner text-lg leading-relaxed">
                                 <p class="font-semibold">¿Cómo funciona el caso  dativo en la lengua alemana?</p>
                             </div>
-
-                            <!-- Reproductor de Audio Grabado -->
-                            <div class="p-4 rounded-xl theme-surface border flex flex-col gap-2">
-                                <div class="flex items-center justify-between text-sm font-bold">
-                                    <span class="flex items-center gap-2 theme-accent">
-                                        <i class="fa-solid fa-microphone"></i> Audio Grabado por su Médico
-                                    </span>
-                                </div>
-                                <audio controls class="w-full mt-1">
-                                    <source src="dativ/audio_dativ.wav" type="audio/wav">
-                                    Su navegador no soporta el reproductor de audio.
-                                </audio>
-                            </div>
                         </div>
 
-                        <!-- Columna Derecha: Reproductor de Video Educativo MP4 -->
-                        <div class="lg:col-span-5 flex flex-col gap-4">
-                            <div class="bg-[#282828] p-3 rounded-2xl border-2 border-[#bdae93] dark:border-[#504945] shadow-md flex flex-col gap-3">
+                        <!-- Columna Derecha: Reproductor de Video Educativo MP4 + Reproductor de Audio -->
+                        <div class="lg:col-span-5 flex flex-col gap-5">
+                            
+                            <!-- Video Player Box -->
+                            <div class="bg-[#282828] p-3.5 rounded-2xl border-2 border-[#bdae93] dark:border-[#504945] shadow-md flex flex-col gap-3">
                                 <div class="flex items-center justify-between px-2 text-xs font-bold text-[#ede679]">
                                     <span class="flex items-center gap-1.5">
-                                        <i class="fa-solid fa-film text-[#fe8019]"></i> Video Educativo con Subtítulos
+                                        <i class="fa-solid fa-film text-[#fe8019]"></i> Video Educativo con Leyenda
                                     </span>
                                     <span class="bg-[#3c3836] px-2 py-0.5 rounded text-[#fbf1c7] flex items-center gap-1">
                                         <i class="fa-solid fa-circle-play text-xs text-[#b8bb26]"></i> HD 720p
@@ -542,6 +618,20 @@ En español los nombres no se declinan por caso, solo por género y número, y s
                                     Su navegador no soporta la reproducción de video MP4.
                                 </video>
                             </div>
+
+                            <!-- Reproductor de Audio Grabado (Debajo del Video) -->
+                            <div class="p-4 rounded-xl theme-surface border flex flex-col gap-2 shadow-sm">
+                                <div class="flex items-center justify-between text-sm font-bold">
+                                    <span class="flex items-center gap-2 theme-accent">
+                                        <i class="fa-solid fa-microphone"></i> Audio Grabado por su Médico
+                                    </span>
+                                </div>
+                                <audio controls class="w-full mt-1">
+                                    <source src="dativ/audio_dativ.wav" type="audio/wav">
+                                    Su navegador no soporta el reproductor de audio.
+                                </audio>
+                            </div>
+
                         </div>
 
                     </div>
@@ -551,7 +641,7 @@ En español los nombres no se declinan por caso, solo por género y número, y s
                 <article id="card-dativo2-1" class="scroll-mt-24 flex flex-col theme-card rounded-2xl border-2 shadow-sm overflow-hidden mb-10 transition-colors">
                     <div class="p-6 lg:p-8 grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
                         
-                        <!-- Columna Izquierda: Lectura y Audio -->
+                        <!-- Columna Izquierda: Lectura y Texto Completo -->
                         <div class="lg:col-span-7 flex flex-col gap-6">
                             <div class="flex items-center justify-between gap-4 flex-wrap">
                                 <span class="px-3.5 py-1 rounded-full theme-surface theme-accent font-bold text-sm border flex items-center gap-2">
@@ -592,27 +682,16 @@ En español los nombres no se declinan por caso, solo por género y número, y s
                             <div class="theme-input p-6 rounded-xl border-l-4 border-[#af3a03] shadow-inner text-lg leading-relaxed">
                                 <p class="font-semibold">¿Cómo funciona el caso dativo en la lengua de alemana?</p>
                             </div>
-
-                            <!-- Reproductor de Audio Grabado -->
-                            <div class="p-4 rounded-xl theme-surface border flex flex-col gap-2">
-                                <div class="flex items-center justify-between text-sm font-bold">
-                                    <span class="flex items-center gap-2 theme-accent">
-                                        <i class="fa-solid fa-microphone"></i> Audio Grabado por su Médico
-                                    </span>
-                                </div>
-                                <audio controls class="w-full mt-1">
-                                    <source src="dativo2-1/audio_dativo2-1.wav" type="audio/wav">
-                                    Su navegador no soporta el reproductor de audio.
-                                </audio>
-                            </div>
                         </div>
 
-                        <!-- Columna Derecha: Reproductor de Video Educativo MP4 -->
-                        <div class="lg:col-span-5 flex flex-col gap-4">
-                            <div class="bg-[#282828] p-3 rounded-2xl border-2 border-[#bdae93] dark:border-[#504945] shadow-md flex flex-col gap-3">
+                        <!-- Columna Derecha: Reproductor de Video Educativo MP4 + Reproductor de Audio -->
+                        <div class="lg:col-span-5 flex flex-col gap-5">
+                            
+                            <!-- Video Player Box -->
+                            <div class="bg-[#282828] p-3.5 rounded-2xl border-2 border-[#bdae93] dark:border-[#504945] shadow-md flex flex-col gap-3">
                                 <div class="flex items-center justify-between px-2 text-xs font-bold text-[#ede679]">
                                     <span class="flex items-center gap-1.5">
-                                        <i class="fa-solid fa-film text-[#fe8019]"></i> Video Educativo con Subtítulos
+                                        <i class="fa-solid fa-film text-[#fe8019]"></i> Video Educativo con Leyenda
                                     </span>
                                     <span class="bg-[#3c3836] px-2 py-0.5 rounded text-[#fbf1c7] flex items-center gap-1">
                                         <i class="fa-solid fa-circle-play text-xs text-[#b8bb26]"></i> HD 720p
@@ -623,87 +702,20 @@ En español los nombres no se declinan por caso, solo por género y número, y s
                                     Su navegador no soporta la reproducción de video MP4.
                                 </video>
                             </div>
-                        </div>
 
-                    </div>
-                </article>
-                
-
-                <article id="card-dativo2" class="scroll-mt-24 flex flex-col theme-card rounded-2xl border-2 shadow-sm overflow-hidden mb-10 transition-colors">
-                    <div class="p-6 lg:p-8 grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
-                        
-                        <!-- Columna Izquierda: Lectura y Audio -->
-                        <div class="lg:col-span-7 flex flex-col gap-6">
-                            <div class="flex items-center justify-between gap-4 flex-wrap">
-                                <span class="px-3.5 py-1 rounded-full theme-surface theme-accent font-bold text-sm border flex items-center gap-2">
-                                    <i class="fa-solid fa-stethoscope"></i> Consejo Médico de Salud
-                                </span>
-                                
-                                <!-- Botones para compartir en redes sociales con iconos FontAwesome -->
-                                <div class="flex items-center gap-2 flex-wrap">
-                                    <a href="https://www.facebook.com/sharer/sharer.php?u=#&quote=Gesundheitstafel%3A%20Dativo2" target="_blank" title="Compartir en Facebook" class="px-3.5 py-1.5 rounded-lg theme-surface hover:border-[#af3a03] font-bold text-xs border transition-all flex items-center gap-1.5 shadow-sm">
-                                        <i class="fa-brands fa-facebook text-[#1877F2] text-sm"></i>
-                                        <span>Facebook</span>
-                                    </a>
-                                    <a href="https://www.instagram.com/" target="_blank" title="Compartir en Instagram" class="px-3.5 py-1.5 rounded-lg theme-surface hover:border-[#af3a03] font-bold text-xs border transition-all flex items-center gap-1.5 shadow-sm">
-                                        <i class="fa-brands fa-instagram text-[#E4405F] text-sm"></i>
-                                        <span>Instagram</span>
-                                    </a>
-                                    <a href="https://twitter.com/intent/tweet?text=Gesundheitstafel%3A%20Dativo2%20-%C2%AB%C2%BFC%C3%B3mo%20funciona%20el%20caso%20dativo%20en%20la%20lengua%20alemana%3F...%C2%BB" target="_blank" title="Compartir en X" class="px-3.5 py-1.5 rounded-lg theme-surface hover:border-[#af3a03] font-bold text-xs border transition-all flex items-center gap-1.5 shadow-sm">
-                                        <i class="fa-brands fa-x-twitter text-sm"></i>
-                                        <span>Twitter/X</span>
-                                    </a>
-                                    <a href="https://api.whatsapp.com/send?text=Gesundheitstafel%3A%20Dativo2%20%C2%AB%C2%BFC%C3%B3mo%20funciona%20el%20caso%20dativo%20en%20la%20lengua%20alemana%3F...%C2%BB" target="_blank" title="Compartir por WhatsApp" class="px-3.5 py-1.5 rounded-lg theme-surface hover:border-[#af3a03] font-bold text-xs border transition-all flex items-center gap-1.5 shadow-sm">
-                                        <i class="fa-brands fa-whatsapp text-[#25D366] text-sm"></i>
-                                        <span>WhatsApp</span>
-                                    </a>
-                                    <button onclick="copyShareLink('Dativo2')" title="Copiar enlace" class="px-3.5 py-1.5 rounded-lg bg-[#af3a03] hover:bg-[#872a00] text-[#fbf1c7] font-bold text-xs transition-all flex items-center gap-1.5 shadow-sm cursor-pointer">
-                                        <i class="fa-solid fa-link text-xs"></i>
-                                        <span>Enlace</span>
-                                    </button>
-                                </div>
-                            </div>
-
-                            <!-- Título de la charla -->
-                            <h2 class="font-headline-lg text-2xl lg:text-3xl font-bold leading-snug">
-                                Dativo2
-                            </h2>
-
-                            <!-- Texto completo del consejo -->
-                            <div class="theme-input p-6 rounded-xl border-l-4 border-[#af3a03] shadow-inner text-lg leading-relaxed">
-                                <p class="font-semibold">¿Cómo funciona el caso dativo en la lengua alemana?</p>
-                            </div>
-
-                            <!-- Reproductor de Audio Grabado -->
-                            <div class="p-4 rounded-xl theme-surface border flex flex-col gap-2">
+                            <!-- Reproductor de Audio Grabado (Debajo del Video) -->
+                            <div class="p-4 rounded-xl theme-surface border flex flex-col gap-2 shadow-sm">
                                 <div class="flex items-center justify-between text-sm font-bold">
                                     <span class="flex items-center gap-2 theme-accent">
                                         <i class="fa-solid fa-microphone"></i> Audio Grabado por su Médico
                                     </span>
                                 </div>
                                 <audio controls class="w-full mt-1">
-                                    <source src="dativo2/audio_dativo2.wav" type="audio/wav">
+                                    <source src="dativo2-1/audio_dativo2-1.wav" type="audio/wav">
                                     Su navegador no soporta el reproductor de audio.
                                 </audio>
                             </div>
-                        </div>
 
-                        <!-- Columna Derecha: Reproductor de Video Educativo MP4 -->
-                        <div class="lg:col-span-5 flex flex-col gap-4">
-                            <div class="bg-[#282828] p-3 rounded-2xl border-2 border-[#bdae93] dark:border-[#504945] shadow-md flex flex-col gap-3">
-                                <div class="flex items-center justify-between px-2 text-xs font-bold text-[#ede679]">
-                                    <span class="flex items-center gap-1.5">
-                                        <i class="fa-solid fa-film text-[#fe8019]"></i> Video Educativo con Subtítulos
-                                    </span>
-                                    <span class="bg-[#3c3836] px-2 py-0.5 rounded text-[#fbf1c7] flex items-center gap-1">
-                                        <i class="fa-solid fa-circle-play text-xs text-[#b8bb26]"></i> HD 720p
-                                    </span>
-                                </div>
-                                <video controls preload="metadata" playsinline poster="dativo2/imagen_dativo2.jpg" class="w-full rounded-xl aspect-video bg-[#000000] object-cover">
-                                    <source src="dativo2/video_dativo2.mp4" type="video/mp4">
-                                    Su navegador no soporta la reproducción de video MP4.
-                                </video>
-                            </div>
                         </div>
 
                     </div>
@@ -713,7 +725,7 @@ En español los nombres no se declinan por caso, solo por género y número, y s
                 <article id="card-hola" class="scroll-mt-24 flex flex-col theme-card rounded-2xl border-2 shadow-sm overflow-hidden mb-10 transition-colors">
                     <div class="p-6 lg:p-8 grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
                         
-                        <!-- Columna Izquierda: Lectura y Audio -->
+                        <!-- Columna Izquierda: Lectura y Texto Completo -->
                         <div class="lg:col-span-7 flex flex-col gap-6">
                             <div class="flex items-center justify-between gap-4 flex-wrap">
                                 <span class="px-3.5 py-1 rounded-full theme-surface theme-accent font-bold text-sm border flex items-center gap-2">
@@ -754,27 +766,16 @@ En español los nombres no se declinan por caso, solo por género y número, y s
                             <div class="theme-input p-6 rounded-xl border-l-4 border-[#af3a03] shadow-inner text-lg leading-relaxed">
                                 <p class="font-semibold">Hola, hola hola</p>
                             </div>
-
-                            <!-- Reproductor de Audio Grabado -->
-                            <div class="p-4 rounded-xl theme-surface border flex flex-col gap-2">
-                                <div class="flex items-center justify-between text-sm font-bold">
-                                    <span class="flex items-center gap-2 theme-accent">
-                                        <i class="fa-solid fa-microphone"></i> Audio Grabado por su Médico
-                                    </span>
-                                </div>
-                                <audio controls class="w-full mt-1">
-                                    <source src="hola/audio_hola.wav" type="audio/wav">
-                                    Su navegador no soporta el reproductor de audio.
-                                </audio>
-                            </div>
                         </div>
 
-                        <!-- Columna Derecha: Reproductor de Video Educativo MP4 -->
-                        <div class="lg:col-span-5 flex flex-col gap-4">
-                            <div class="bg-[#282828] p-3 rounded-2xl border-2 border-[#bdae93] dark:border-[#504945] shadow-md flex flex-col gap-3">
+                        <!-- Columna Derecha: Reproductor de Video Educativo MP4 + Reproductor de Audio -->
+                        <div class="lg:col-span-5 flex flex-col gap-5">
+                            
+                            <!-- Video Player Box -->
+                            <div class="bg-[#282828] p-3.5 rounded-2xl border-2 border-[#bdae93] dark:border-[#504945] shadow-md flex flex-col gap-3">
                                 <div class="flex items-center justify-between px-2 text-xs font-bold text-[#ede679]">
                                     <span class="flex items-center gap-1.5">
-                                        <i class="fa-solid fa-film text-[#fe8019]"></i> Video Educativo con Subtítulos
+                                        <i class="fa-solid fa-film text-[#fe8019]"></i> Video Educativo con Leyenda
                                     </span>
                                     <span class="bg-[#3c3836] px-2 py-0.5 rounded text-[#fbf1c7] flex items-center gap-1">
                                         <i class="fa-solid fa-circle-play text-xs text-[#b8bb26]"></i> HD 720p
@@ -785,6 +786,20 @@ En español los nombres no se declinan por caso, solo por género y número, y s
                                     Su navegador no soporta la reproducción de video MP4.
                                 </video>
                             </div>
+
+                            <!-- Reproductor de Audio Grabado (Debajo del Video) -->
+                            <div class="p-4 rounded-xl theme-surface border flex flex-col gap-2 shadow-sm">
+                                <div class="flex items-center justify-between text-sm font-bold">
+                                    <span class="flex items-center gap-2 theme-accent">
+                                        <i class="fa-solid fa-microphone"></i> Audio Grabado por su Médico
+                                    </span>
+                                </div>
+                                <audio controls class="w-full mt-1">
+                                    <source src="hola/audio_hola.wav" type="audio/wav">
+                                    Su navegador no soporta el reproductor de audio.
+                                </audio>
+                            </div>
+
                         </div>
 
                     </div>
@@ -794,7 +809,7 @@ En español los nombres no se declinan por caso, solo por género y número, y s
                 <article id="card-crup" class="scroll-mt-24 flex flex-col theme-card rounded-2xl border-2 shadow-sm overflow-hidden mb-10 transition-colors">
                     <div class="p-6 lg:p-8 grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
                         
-                        <!-- Columna Izquierda: Lectura y Audio -->
+                        <!-- Columna Izquierda: Lectura y Texto Completo -->
                         <div class="lg:col-span-7 flex flex-col gap-6">
                             <div class="flex items-center justify-between gap-4 flex-wrap">
                                 <span class="px-3.5 py-1 rounded-full theme-surface theme-accent font-bold text-sm border flex items-center gap-2">
@@ -856,27 +871,16 @@ Aunque el crup puede asustar a los niños y a los padres, intente mantener la ca
 
 Escriba o pegue aquí el contenido de su consejo médico...</p>
                             </div>
-
-                            <!-- Reproductor de Audio Grabado -->
-                            <div class="p-4 rounded-xl theme-surface border flex flex-col gap-2">
-                                <div class="flex items-center justify-between text-sm font-bold">
-                                    <span class="flex items-center gap-2 theme-accent">
-                                        <i class="fa-solid fa-microphone"></i> Audio Grabado por su Médico
-                                    </span>
-                                </div>
-                                <audio controls class="w-full mt-1">
-                                    <source src="crup/audio_crup.wav" type="audio/wav">
-                                    Su navegador no soporta el reproductor de audio.
-                                </audio>
-                            </div>
                         </div>
 
-                        <!-- Columna Derecha: Reproductor de Video Educativo MP4 -->
-                        <div class="lg:col-span-5 flex flex-col gap-4">
-                            <div class="bg-[#282828] p-3 rounded-2xl border-2 border-[#bdae93] dark:border-[#504945] shadow-md flex flex-col gap-3">
+                        <!-- Columna Derecha: Reproductor de Video Educativo MP4 + Reproductor de Audio -->
+                        <div class="lg:col-span-5 flex flex-col gap-5">
+                            
+                            <!-- Video Player Box -->
+                            <div class="bg-[#282828] p-3.5 rounded-2xl border-2 border-[#bdae93] dark:border-[#504945] shadow-md flex flex-col gap-3">
                                 <div class="flex items-center justify-between px-2 text-xs font-bold text-[#ede679]">
                                     <span class="flex items-center gap-1.5">
-                                        <i class="fa-solid fa-film text-[#fe8019]"></i> Video Educativo con Subtítulos
+                                        <i class="fa-solid fa-film text-[#fe8019]"></i> Video Educativo con Leyenda
                                     </span>
                                     <span class="bg-[#3c3836] px-2 py-0.5 rounded text-[#fbf1c7] flex items-center gap-1">
                                         <i class="fa-solid fa-circle-play text-xs text-[#b8bb26]"></i> HD 720p
@@ -887,6 +891,20 @@ Escriba o pegue aquí el contenido de su consejo médico...</p>
                                     Su navegador no soporta la reproducción de video MP4.
                                 </video>
                             </div>
+
+                            <!-- Reproductor de Audio Grabado (Debajo del Video) -->
+                            <div class="p-4 rounded-xl theme-surface border flex flex-col gap-2 shadow-sm">
+                                <div class="flex items-center justify-between text-sm font-bold">
+                                    <span class="flex items-center gap-2 theme-accent">
+                                        <i class="fa-solid fa-microphone"></i> Audio Grabado por su Médico
+                                    </span>
+                                </div>
+                                <audio controls class="w-full mt-1">
+                                    <source src="crup/audio_crup.wav" type="audio/wav">
+                                    Su navegador no soporta el reproductor de audio.
+                                </audio>
+                            </div>
+
                         </div>
 
                     </div>
@@ -896,7 +914,7 @@ Escriba o pegue aquí el contenido de su consejo médico...</p>
                 <article id="card-ñoquí" class="scroll-mt-24 flex flex-col theme-card rounded-2xl border-2 shadow-sm overflow-hidden mb-10 transition-colors">
                     <div class="p-6 lg:p-8 grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
                         
-                        <!-- Columna Izquierda: Lectura y Audio -->
+                        <!-- Columna Izquierda: Lectura y Texto Completo -->
                         <div class="lg:col-span-7 flex flex-col gap-6">
                             <div class="flex items-center justify-between gap-4 flex-wrap">
                                 <span class="px-3.5 py-1 rounded-full theme-surface theme-accent font-bold text-sm border flex items-center gap-2">
@@ -937,27 +955,16 @@ Escriba o pegue aquí el contenido de su consejo médico...</p>
                             <div class="theme-input p-6 rounded-xl border-l-4 border-[#af3a03] shadow-inner text-lg leading-relaxed">
                                 <p class="font-semibold">No sé, lo que pinte.</p>
                             </div>
-
-                            <!-- Reproductor de Audio Grabado -->
-                            <div class="p-4 rounded-xl theme-surface border flex flex-col gap-2">
-                                <div class="flex items-center justify-between text-sm font-bold">
-                                    <span class="flex items-center gap-2 theme-accent">
-                                        <i class="fa-solid fa-microphone"></i> Audio Grabado por su Médico
-                                    </span>
-                                </div>
-                                <audio controls class="w-full mt-1">
-                                    <source src="ñoquí/audio_ñoquí.wav" type="audio/wav">
-                                    Su navegador no soporta el reproductor de audio.
-                                </audio>
-                            </div>
                         </div>
 
-                        <!-- Columna Derecha: Reproductor de Video Educativo MP4 -->
-                        <div class="lg:col-span-5 flex flex-col gap-4">
-                            <div class="bg-[#282828] p-3 rounded-2xl border-2 border-[#bdae93] dark:border-[#504945] shadow-md flex flex-col gap-3">
+                        <!-- Columna Derecha: Reproductor de Video Educativo MP4 + Reproductor de Audio -->
+                        <div class="lg:col-span-5 flex flex-col gap-5">
+                            
+                            <!-- Video Player Box -->
+                            <div class="bg-[#282828] p-3.5 rounded-2xl border-2 border-[#bdae93] dark:border-[#504945] shadow-md flex flex-col gap-3">
                                 <div class="flex items-center justify-between px-2 text-xs font-bold text-[#ede679]">
                                     <span class="flex items-center gap-1.5">
-                                        <i class="fa-solid fa-film text-[#fe8019]"></i> Video Educativo con Subtítulos
+                                        <i class="fa-solid fa-film text-[#fe8019]"></i> Video Educativo con Leyenda
                                     </span>
                                     <span class="bg-[#3c3836] px-2 py-0.5 rounded text-[#fbf1c7] flex items-center gap-1">
                                         <i class="fa-solid fa-circle-play text-xs text-[#b8bb26]"></i> HD 720p
@@ -968,6 +975,20 @@ Escriba o pegue aquí el contenido de su consejo médico...</p>
                                     Su navegador no soporta la reproducción de video MP4.
                                 </video>
                             </div>
+
+                            <!-- Reproductor de Audio Grabado (Debajo del Video) -->
+                            <div class="p-4 rounded-xl theme-surface border flex flex-col gap-2 shadow-sm">
+                                <div class="flex items-center justify-between text-sm font-bold">
+                                    <span class="flex items-center gap-2 theme-accent">
+                                        <i class="fa-solid fa-microphone"></i> Audio Grabado por su Médico
+                                    </span>
+                                </div>
+                                <audio controls class="w-full mt-1">
+                                    <source src="ñoquí/audio_ñoquí.wav" type="audio/wav">
+                                    Su navegador no soporta el reproductor de audio.
+                                </audio>
+                            </div>
+
                         </div>
 
                     </div>
@@ -977,7 +998,7 @@ Escriba o pegue aquí el contenido de su consejo médico...</p>
                 <article id="card-akkusativergänzung" class="scroll-mt-24 flex flex-col theme-card rounded-2xl border-2 shadow-sm overflow-hidden mb-10 transition-colors">
                     <div class="p-6 lg:p-8 grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
                         
-                        <!-- Columna Izquierda: Lectura y Audio -->
+                        <!-- Columna Izquierda: Lectura y Texto Completo -->
                         <div class="lg:col-span-7 flex flex-col gap-6">
                             <div class="flex items-center justify-between gap-4 flex-wrap">
                                 <span class="px-3.5 py-1 rounded-full theme-surface theme-accent font-bold text-sm border flex items-center gap-2">
@@ -1018,27 +1039,16 @@ Escriba o pegue aquí el contenido de su consejo médico...</p>
                             <div class="theme-input p-6 rounded-xl border-l-4 border-[#af3a03] shadow-inner text-lg leading-relaxed">
                                 <p class="font-semibold">La Akkusativergänzung es el equivalente a nuestro complemento directo.</p>
                             </div>
-
-                            <!-- Reproductor de Audio Grabado -->
-                            <div class="p-4 rounded-xl theme-surface border flex flex-col gap-2">
-                                <div class="flex items-center justify-between text-sm font-bold">
-                                    <span class="flex items-center gap-2 theme-accent">
-                                        <i class="fa-solid fa-microphone"></i> Audio Grabado por su Médico
-                                    </span>
-                                </div>
-                                <audio controls class="w-full mt-1">
-                                    <source src="akkusativergänzung/audio_akkusativergänzung.wav" type="audio/wav">
-                                    Su navegador no soporta el reproductor de audio.
-                                </audio>
-                            </div>
                         </div>
 
-                        <!-- Columna Derecha: Reproductor de Video Educativo MP4 -->
-                        <div class="lg:col-span-5 flex flex-col gap-4">
-                            <div class="bg-[#282828] p-3 rounded-2xl border-2 border-[#bdae93] dark:border-[#504945] shadow-md flex flex-col gap-3">
+                        <!-- Columna Derecha: Reproductor de Video Educativo MP4 + Reproductor de Audio -->
+                        <div class="lg:col-span-5 flex flex-col gap-5">
+                            
+                            <!-- Video Player Box -->
+                            <div class="bg-[#282828] p-3.5 rounded-2xl border-2 border-[#bdae93] dark:border-[#504945] shadow-md flex flex-col gap-3">
                                 <div class="flex items-center justify-between px-2 text-xs font-bold text-[#ede679]">
                                     <span class="flex items-center gap-1.5">
-                                        <i class="fa-solid fa-film text-[#fe8019]"></i> Video Educativo con Subtítulos
+                                        <i class="fa-solid fa-film text-[#fe8019]"></i> Video Educativo con Leyenda
                                     </span>
                                     <span class="bg-[#3c3836] px-2 py-0.5 rounded text-[#fbf1c7] flex items-center gap-1">
                                         <i class="fa-solid fa-circle-play text-xs text-[#b8bb26]"></i> HD 720p
@@ -1049,6 +1059,20 @@ Escriba o pegue aquí el contenido de su consejo médico...</p>
                                     Su navegador no soporta la reproducción de video MP4.
                                 </video>
                             </div>
+
+                            <!-- Reproductor de Audio Grabado (Debajo del Video) -->
+                            <div class="p-4 rounded-xl theme-surface border flex flex-col gap-2 shadow-sm">
+                                <div class="flex items-center justify-between text-sm font-bold">
+                                    <span class="flex items-center gap-2 theme-accent">
+                                        <i class="fa-solid fa-microphone"></i> Audio Grabado por su Médico
+                                    </span>
+                                </div>
+                                <audio controls class="w-full mt-1">
+                                    <source src="akkusativergänzung/audio_akkusativergänzung.wav" type="audio/wav">
+                                    Su navegador no soporta el reproductor de audio.
+                                </audio>
+                            </div>
+
                         </div>
 
                     </div>
@@ -1058,7 +1082,7 @@ Escriba o pegue aquí el contenido de su consejo médico...</p>
                 <article id="card-karl" class="scroll-mt-24 flex flex-col theme-card rounded-2xl border-2 shadow-sm overflow-hidden mb-10 transition-colors">
                     <div class="p-6 lg:p-8 grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
                         
-                        <!-- Columna Izquierda: Lectura y Audio -->
+                        <!-- Columna Izquierda: Lectura y Texto Completo -->
                         <div class="lg:col-span-7 flex flex-col gap-6">
                             <div class="flex items-center justify-between gap-4 flex-wrap">
                                 <span class="px-3.5 py-1 rounded-full theme-surface theme-accent font-bold text-sm border flex items-center gap-2">
@@ -1099,27 +1123,16 @@ Escriba o pegue aquí el contenido de su consejo médico...</p>
                             <div class="theme-input p-6 rounded-xl border-l-4 border-[#af3a03] shadow-inner text-lg leading-relaxed">
                                 <p class="font-semibold">o le a mi nombre es Carlos tengo 90 años y soy arquitecto.</p>
                             </div>
-
-                            <!-- Reproductor de Audio Grabado -->
-                            <div class="p-4 rounded-xl theme-surface border flex flex-col gap-2">
-                                <div class="flex items-center justify-between text-sm font-bold">
-                                    <span class="flex items-center gap-2 theme-accent">
-                                        <i class="fa-solid fa-microphone"></i> Audio Grabado por su Médico
-                                    </span>
-                                </div>
-                                <audio controls class="w-full mt-1">
-                                    <source src="karl/audio_karl.wav" type="audio/wav">
-                                    Su navegador no soporta el reproductor de audio.
-                                </audio>
-                            </div>
                         </div>
 
-                        <!-- Columna Derecha: Reproductor de Video Educativo MP4 -->
-                        <div class="lg:col-span-5 flex flex-col gap-4">
-                            <div class="bg-[#282828] p-3 rounded-2xl border-2 border-[#bdae93] dark:border-[#504945] shadow-md flex flex-col gap-3">
+                        <!-- Columna Derecha: Reproductor de Video Educativo MP4 + Reproductor de Audio -->
+                        <div class="lg:col-span-5 flex flex-col gap-5">
+                            
+                            <!-- Video Player Box -->
+                            <div class="bg-[#282828] p-3.5 rounded-2xl border-2 border-[#bdae93] dark:border-[#504945] shadow-md flex flex-col gap-3">
                                 <div class="flex items-center justify-between px-2 text-xs font-bold text-[#ede679]">
                                     <span class="flex items-center gap-1.5">
-                                        <i class="fa-solid fa-film text-[#fe8019]"></i> Video Educativo con Subtítulos
+                                        <i class="fa-solid fa-film text-[#fe8019]"></i> Video Educativo con Leyenda
                                     </span>
                                     <span class="bg-[#3c3836] px-2 py-0.5 rounded text-[#fbf1c7] flex items-center gap-1">
                                         <i class="fa-solid fa-circle-play text-xs text-[#b8bb26]"></i> HD 720p
@@ -1130,6 +1143,20 @@ Escriba o pegue aquí el contenido de su consejo médico...</p>
                                     Su navegador no soporta la reproducción de video MP4.
                                 </video>
                             </div>
+
+                            <!-- Reproductor de Audio Grabado (Debajo del Video) -->
+                            <div class="p-4 rounded-xl theme-surface border flex flex-col gap-2 shadow-sm">
+                                <div class="flex items-center justify-between text-sm font-bold">
+                                    <span class="flex items-center gap-2 theme-accent">
+                                        <i class="fa-solid fa-microphone"></i> Audio Grabado por su Médico
+                                    </span>
+                                </div>
+                                <audio controls class="w-full mt-1">
+                                    <source src="karl/audio_karl.wav" type="audio/wav">
+                                    Su navegador no soporta el reproductor de audio.
+                                </audio>
+                            </div>
+
                         </div>
 
                     </div>
@@ -1139,7 +1166,7 @@ Escriba o pegue aquí el contenido de su consejo médico...</p>
                 <article id="card-carlinhos" class="scroll-mt-24 flex flex-col theme-card rounded-2xl border-2 shadow-sm overflow-hidden mb-10 transition-colors">
                     <div class="p-6 lg:p-8 grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
                         
-                        <!-- Columna Izquierda: Lectura y Audio -->
+                        <!-- Columna Izquierda: Lectura y Texto Completo -->
                         <div class="lg:col-span-7 flex flex-col gap-6">
                             <div class="flex items-center justify-between gap-4 flex-wrap">
                                 <span class="px-3.5 py-1 rounded-full theme-surface theme-accent font-bold text-sm border flex items-center gap-2">
@@ -1180,27 +1207,16 @@ Escriba o pegue aquí el contenido de su consejo médico...</p>
                             <div class="theme-input p-6 rounded-xl border-l-4 border-[#af3a03] shadow-inner text-lg leading-relaxed">
                                 <p class="font-semibold">Ola, eu chamo-me Carlos, tenho 90 anos e sou arquiteto.</p>
                             </div>
-
-                            <!-- Reproductor de Audio Grabado -->
-                            <div class="p-4 rounded-xl theme-surface border flex flex-col gap-2">
-                                <div class="flex items-center justify-between text-sm font-bold">
-                                    <span class="flex items-center gap-2 theme-accent">
-                                        <i class="fa-solid fa-microphone"></i> Audio Grabado por su Médico
-                                    </span>
-                                </div>
-                                <audio controls class="w-full mt-1">
-                                    <source src="carlinhos/audio_carlinhos.wav" type="audio/wav">
-                                    Su navegador no soporta el reproductor de audio.
-                                </audio>
-                            </div>
                         </div>
 
-                        <!-- Columna Derecha: Reproductor de Video Educativo MP4 -->
-                        <div class="lg:col-span-5 flex flex-col gap-4">
-                            <div class="bg-[#282828] p-3 rounded-2xl border-2 border-[#bdae93] dark:border-[#504945] shadow-md flex flex-col gap-3">
+                        <!-- Columna Derecha: Reproductor de Video Educativo MP4 + Reproductor de Audio -->
+                        <div class="lg:col-span-5 flex flex-col gap-5">
+                            
+                            <!-- Video Player Box -->
+                            <div class="bg-[#282828] p-3.5 rounded-2xl border-2 border-[#bdae93] dark:border-[#504945] shadow-md flex flex-col gap-3">
                                 <div class="flex items-center justify-between px-2 text-xs font-bold text-[#ede679]">
                                     <span class="flex items-center gap-1.5">
-                                        <i class="fa-solid fa-film text-[#fe8019]"></i> Video Educativo con Subtítulos
+                                        <i class="fa-solid fa-film text-[#fe8019]"></i> Video Educativo con Leyenda
                                     </span>
                                     <span class="bg-[#3c3836] px-2 py-0.5 rounded text-[#fbf1c7] flex items-center gap-1">
                                         <i class="fa-solid fa-circle-play text-xs text-[#b8bb26]"></i> HD 720p
@@ -1211,6 +1227,20 @@ Escriba o pegue aquí el contenido de su consejo médico...</p>
                                     Su navegador no soporta la reproducción de video MP4.
                                 </video>
                             </div>
+
+                            <!-- Reproductor de Audio Grabado (Debajo del Video) -->
+                            <div class="p-4 rounded-xl theme-surface border flex flex-col gap-2 shadow-sm">
+                                <div class="flex items-center justify-between text-sm font-bold">
+                                    <span class="flex items-center gap-2 theme-accent">
+                                        <i class="fa-solid fa-microphone"></i> Audio Grabado por su Médico
+                                    </span>
+                                </div>
+                                <audio controls class="w-full mt-1">
+                                    <source src="carlinhos/audio_carlinhos.wav" type="audio/wav">
+                                    Su navegador no soporta el reproductor de audio.
+                                </audio>
+                            </div>
+
                         </div>
 
                     </div>
@@ -1220,7 +1250,7 @@ Escriba o pegue aquí el contenido de su consejo médico...</p>
                 <article id="card-carliños" class="scroll-mt-24 flex flex-col theme-card rounded-2xl border-2 shadow-sm overflow-hidden mb-10 transition-colors">
                     <div class="p-6 lg:p-8 grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
                         
-                        <!-- Columna Izquierda: Lectura y Audio -->
+                        <!-- Columna Izquierda: Lectura y Texto Completo -->
                         <div class="lg:col-span-7 flex flex-col gap-6">
                             <div class="flex items-center justify-between gap-4 flex-wrap">
                                 <span class="px-3.5 py-1 rounded-full theme-surface theme-accent font-bold text-sm border flex items-center gap-2">
@@ -1261,27 +1291,16 @@ Escriba o pegue aquí el contenido de su consejo médico...</p>
                             <div class="theme-input p-6 rounded-xl border-l-4 border-[#af3a03] shadow-inner text-lg leading-relaxed">
                                 <p class="font-semibold">hola mi nombre es Carlos tengo 90 años y soy arquitecto.</p>
                             </div>
-
-                            <!-- Reproductor de Audio Grabado -->
-                            <div class="p-4 rounded-xl theme-surface border flex flex-col gap-2">
-                                <div class="flex items-center justify-between text-sm font-bold">
-                                    <span class="flex items-center gap-2 theme-accent">
-                                        <i class="fa-solid fa-microphone"></i> Audio Grabado por su Médico
-                                    </span>
-                                </div>
-                                <audio controls class="w-full mt-1">
-                                    <source src="carliños/audio_carliños.wav" type="audio/wav">
-                                    Su navegador no soporta el reproductor de audio.
-                                </audio>
-                            </div>
                         </div>
 
-                        <!-- Columna Derecha: Reproductor de Video Educativo MP4 -->
-                        <div class="lg:col-span-5 flex flex-col gap-4">
-                            <div class="bg-[#282828] p-3 rounded-2xl border-2 border-[#bdae93] dark:border-[#504945] shadow-md flex flex-col gap-3">
+                        <!-- Columna Derecha: Reproductor de Video Educativo MP4 + Reproductor de Audio -->
+                        <div class="lg:col-span-5 flex flex-col gap-5">
+                            
+                            <!-- Video Player Box -->
+                            <div class="bg-[#282828] p-3.5 rounded-2xl border-2 border-[#bdae93] dark:border-[#504945] shadow-md flex flex-col gap-3">
                                 <div class="flex items-center justify-between px-2 text-xs font-bold text-[#ede679]">
                                     <span class="flex items-center gap-1.5">
-                                        <i class="fa-solid fa-film text-[#fe8019]"></i> Video Educativo con Subtítulos
+                                        <i class="fa-solid fa-film text-[#fe8019]"></i> Video Educativo con Leyenda
                                     </span>
                                     <span class="bg-[#3c3836] px-2 py-0.5 rounded text-[#fbf1c7] flex items-center gap-1">
                                         <i class="fa-solid fa-circle-play text-xs text-[#b8bb26]"></i> HD 720p
@@ -1292,6 +1311,20 @@ Escriba o pegue aquí el contenido de su consejo médico...</p>
                                     Su navegador no soporta la reproducción de video MP4.
                                 </video>
                             </div>
+
+                            <!-- Reproductor de Audio Grabado (Debajo del Video) -->
+                            <div class="p-4 rounded-xl theme-surface border flex flex-col gap-2 shadow-sm">
+                                <div class="flex items-center justify-between text-sm font-bold">
+                                    <span class="flex items-center gap-2 theme-accent">
+                                        <i class="fa-solid fa-microphone"></i> Audio Grabado por su Médico
+                                    </span>
+                                </div>
+                                <audio controls class="w-full mt-1">
+                                    <source src="carliños/audio_carliños.wav" type="audio/wav">
+                                    Su navegador no soporta el reproductor de audio.
+                                </audio>
+                            </div>
+
                         </div>
 
                     </div>
@@ -1301,7 +1334,7 @@ Escriba o pegue aquí el contenido de su consejo médico...</p>
                 <article id="card-prueba-2" class="scroll-mt-24 flex flex-col theme-card rounded-2xl border-2 shadow-sm overflow-hidden mb-10 transition-colors">
                     <div class="p-6 lg:p-8 grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
                         
-                        <!-- Columna Izquierda: Lectura y Audio -->
+                        <!-- Columna Izquierda: Lectura y Texto Completo -->
                         <div class="lg:col-span-7 flex flex-col gap-6">
                             <div class="flex items-center justify-between gap-4 flex-wrap">
                                 <span class="px-3.5 py-1 rounded-full theme-surface theme-accent font-bold text-sm border flex items-center gap-2">
@@ -1342,27 +1375,16 @@ Escriba o pegue aquí el contenido de su consejo médico...</p>
                             <div class="theme-input p-6 rounded-xl border-l-4 border-[#af3a03] shadow-inner text-lg leading-relaxed">
                                 <p class="font-semibold">Wea wea wea</p>
                             </div>
-
-                            <!-- Reproductor de Audio Grabado -->
-                            <div class="p-4 rounded-xl theme-surface border flex flex-col gap-2">
-                                <div class="flex items-center justify-between text-sm font-bold">
-                                    <span class="flex items-center gap-2 theme-accent">
-                                        <i class="fa-solid fa-microphone"></i> Audio Grabado por su Médico
-                                    </span>
-                                </div>
-                                <audio controls class="w-full mt-1">
-                                    <source src="prueba-2/audio_prueba-2.wav" type="audio/wav">
-                                    Su navegador no soporta el reproductor de audio.
-                                </audio>
-                            </div>
                         </div>
 
-                        <!-- Columna Derecha: Reproductor de Video Educativo MP4 -->
-                        <div class="lg:col-span-5 flex flex-col gap-4">
-                            <div class="bg-[#282828] p-3 rounded-2xl border-2 border-[#bdae93] dark:border-[#504945] shadow-md flex flex-col gap-3">
+                        <!-- Columna Derecha: Reproductor de Video Educativo MP4 + Reproductor de Audio -->
+                        <div class="lg:col-span-5 flex flex-col gap-5">
+                            
+                            <!-- Video Player Box -->
+                            <div class="bg-[#282828] p-3.5 rounded-2xl border-2 border-[#bdae93] dark:border-[#504945] shadow-md flex flex-col gap-3">
                                 <div class="flex items-center justify-between px-2 text-xs font-bold text-[#ede679]">
                                     <span class="flex items-center gap-1.5">
-                                        <i class="fa-solid fa-film text-[#fe8019]"></i> Video Educativo con Subtítulos
+                                        <i class="fa-solid fa-film text-[#fe8019]"></i> Video Educativo con Leyenda
                                     </span>
                                     <span class="bg-[#3c3836] px-2 py-0.5 rounded text-[#fbf1c7] flex items-center gap-1">
                                         <i class="fa-solid fa-circle-play text-xs text-[#b8bb26]"></i> HD 720p
@@ -1373,6 +1395,20 @@ Escriba o pegue aquí el contenido de su consejo médico...</p>
                                     Su navegador no soporta la reproducción de video MP4.
                                 </video>
                             </div>
+
+                            <!-- Reproductor de Audio Grabado (Debajo del Video) -->
+                            <div class="p-4 rounded-xl theme-surface border flex flex-col gap-2 shadow-sm">
+                                <div class="flex items-center justify-between text-sm font-bold">
+                                    <span class="flex items-center gap-2 theme-accent">
+                                        <i class="fa-solid fa-microphone"></i> Audio Grabado por su Médico
+                                    </span>
+                                </div>
+                                <audio controls class="w-full mt-1">
+                                    <source src="prueba-2/audio_prueba-2.wav" type="audio/wav">
+                                    Su navegador no soporta el reproductor de audio.
+                                </audio>
+                            </div>
+
                         </div>
 
                     </div>
@@ -1382,7 +1418,7 @@ Escriba o pegue aquí el contenido de su consejo médico...</p>
                 <article id="card-dativergänzung" class="scroll-mt-24 flex flex-col theme-card rounded-2xl border-2 shadow-sm overflow-hidden mb-10 transition-colors">
                     <div class="p-6 lg:p-8 grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
                         
-                        <!-- Columna Izquierda: Lectura y Audio -->
+                        <!-- Columna Izquierda: Lectura y Texto Completo -->
                         <div class="lg:col-span-7 flex flex-col gap-6">
                             <div class="flex items-center justify-between gap-4 flex-wrap">
                                 <span class="px-3.5 py-1 rounded-full theme-surface theme-accent font-bold text-sm border flex items-center gap-2">
@@ -1423,27 +1459,16 @@ Escriba o pegue aquí el contenido de su consejo médico...</p>
                             <div class="theme-input p-6 rounded-xl border-l-4 border-[#af3a03] shadow-inner text-lg leading-relaxed">
                                 <p class="font-semibold">Una Dativergänzung es en alemán lo equivalente a un complemento indirecto</p>
                             </div>
-
-                            <!-- Reproductor de Audio Grabado -->
-                            <div class="p-4 rounded-xl theme-surface border flex flex-col gap-2">
-                                <div class="flex items-center justify-between text-sm font-bold">
-                                    <span class="flex items-center gap-2 theme-accent">
-                                        <i class="fa-solid fa-microphone"></i> Audio Grabado por su Médico
-                                    </span>
-                                </div>
-                                <audio controls class="w-full mt-1">
-                                    <source src="dativergänzung/audio_dativergänzung.wav" type="audio/wav">
-                                    Su navegador no soporta el reproductor de audio.
-                                </audio>
-                            </div>
                         </div>
 
-                        <!-- Columna Derecha: Reproductor de Video Educativo MP4 -->
-                        <div class="lg:col-span-5 flex flex-col gap-4">
-                            <div class="bg-[#282828] p-3 rounded-2xl border-2 border-[#bdae93] dark:border-[#504945] shadow-md flex flex-col gap-3">
+                        <!-- Columna Derecha: Reproductor de Video Educativo MP4 + Reproductor de Audio -->
+                        <div class="lg:col-span-5 flex flex-col gap-5">
+                            
+                            <!-- Video Player Box -->
+                            <div class="bg-[#282828] p-3.5 rounded-2xl border-2 border-[#bdae93] dark:border-[#504945] shadow-md flex flex-col gap-3">
                                 <div class="flex items-center justify-between px-2 text-xs font-bold text-[#ede679]">
                                     <span class="flex items-center gap-1.5">
-                                        <i class="fa-solid fa-film text-[#fe8019]"></i> Video Educativo con Subtítulos
+                                        <i class="fa-solid fa-film text-[#fe8019]"></i> Video Educativo con Leyenda
                                     </span>
                                     <span class="bg-[#3c3836] px-2 py-0.5 rounded text-[#fbf1c7] flex items-center gap-1">
                                         <i class="fa-solid fa-circle-play text-xs text-[#b8bb26]"></i> HD 720p
@@ -1454,6 +1479,20 @@ Escriba o pegue aquí el contenido de su consejo médico...</p>
                                     Su navegador no soporta la reproducción de video MP4.
                                 </video>
                             </div>
+
+                            <!-- Reproductor de Audio Grabado (Debajo del Video) -->
+                            <div class="p-4 rounded-xl theme-surface border flex flex-col gap-2 shadow-sm">
+                                <div class="flex items-center justify-between text-sm font-bold">
+                                    <span class="flex items-center gap-2 theme-accent">
+                                        <i class="fa-solid fa-microphone"></i> Audio Grabado por su Médico
+                                    </span>
+                                </div>
+                                <audio controls class="w-full mt-1">
+                                    <source src="dativergänzung/audio_dativergänzung.wav" type="audio/wav">
+                                    Su navegador no soporta el reproductor de audio.
+                                </audio>
+                            </div>
+
                         </div>
 
                     </div>
@@ -1463,7 +1502,7 @@ Escriba o pegue aquí el contenido de su consejo médico...</p>
                 <article id="card-prueba" class="scroll-mt-24 flex flex-col theme-card rounded-2xl border-2 shadow-sm overflow-hidden mb-10 transition-colors">
                     <div class="p-6 lg:p-8 grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
                         
-                        <!-- Columna Izquierda: Lectura y Audio -->
+                        <!-- Columna Izquierda: Lectura y Texto Completo -->
                         <div class="lg:col-span-7 flex flex-col gap-6">
                             <div class="flex items-center justify-between gap-4 flex-wrap">
                                 <span class="px-3.5 py-1 rounded-full theme-surface theme-accent font-bold text-sm border flex items-center gap-2">
@@ -1504,27 +1543,16 @@ Escriba o pegue aquí el contenido de su consejo médico...</p>
                             <div class="theme-input p-6 rounded-xl border-l-4 border-[#af3a03] shadow-inner text-lg leading-relaxed">
                                 <p class="font-semibold">¿Cómo funciona el caso de activo en la lengua de mano?</p>
                             </div>
-
-                            <!-- Reproductor de Audio Grabado -->
-                            <div class="p-4 rounded-xl theme-surface border flex flex-col gap-2">
-                                <div class="flex items-center justify-between text-sm font-bold">
-                                    <span class="flex items-center gap-2 theme-accent">
-                                        <i class="fa-solid fa-microphone"></i> Audio Grabado por su Médico
-                                    </span>
-                                </div>
-                                <audio controls class="w-full mt-1">
-                                    <source src="prueba/audio_prueba.wav" type="audio/wav">
-                                    Su navegador no soporta el reproductor de audio.
-                                </audio>
-                            </div>
                         </div>
 
-                        <!-- Columna Derecha: Reproductor de Video Educativo MP4 -->
-                        <div class="lg:col-span-5 flex flex-col gap-4">
-                            <div class="bg-[#282828] p-3 rounded-2xl border-2 border-[#bdae93] dark:border-[#504945] shadow-md flex flex-col gap-3">
+                        <!-- Columna Derecha: Reproductor de Video Educativo MP4 + Reproductor de Audio -->
+                        <div class="lg:col-span-5 flex flex-col gap-5">
+                            
+                            <!-- Video Player Box -->
+                            <div class="bg-[#282828] p-3.5 rounded-2xl border-2 border-[#bdae93] dark:border-[#504945] shadow-md flex flex-col gap-3">
                                 <div class="flex items-center justify-between px-2 text-xs font-bold text-[#ede679]">
                                     <span class="flex items-center gap-1.5">
-                                        <i class="fa-solid fa-film text-[#fe8019]"></i> Video Educativo con Subtítulos
+                                        <i class="fa-solid fa-film text-[#fe8019]"></i> Video Educativo con Leyenda
                                     </span>
                                     <span class="bg-[#3c3836] px-2 py-0.5 rounded text-[#fbf1c7] flex items-center gap-1">
                                         <i class="fa-solid fa-circle-play text-xs text-[#b8bb26]"></i> HD 720p
@@ -1535,6 +1563,20 @@ Escriba o pegue aquí el contenido de su consejo médico...</p>
                                     Su navegador no soporta la reproducción de video MP4.
                                 </video>
                             </div>
+
+                            <!-- Reproductor de Audio Grabado (Debajo del Video) -->
+                            <div class="p-4 rounded-xl theme-surface border flex flex-col gap-2 shadow-sm">
+                                <div class="flex items-center justify-between text-sm font-bold">
+                                    <span class="flex items-center gap-2 theme-accent">
+                                        <i class="fa-solid fa-microphone"></i> Audio Grabado por su Médico
+                                    </span>
+                                </div>
+                                <audio controls class="w-full mt-1">
+                                    <source src="prueba/audio_prueba.wav" type="audio/wav">
+                                    Su navegador no soporta el reproductor de audio.
+                                </audio>
+                            </div>
+
                         </div>
 
                     </div>
@@ -1544,7 +1586,7 @@ Escriba o pegue aquí el contenido de su consejo médico...</p>
                 <article id="card-instrumental-en-polaco" class="scroll-mt-24 flex flex-col theme-card rounded-2xl border-2 shadow-sm overflow-hidden mb-10 transition-colors">
                     <div class="p-6 lg:p-8 grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
                         
-                        <!-- Columna Izquierda: Lectura y Audio -->
+                        <!-- Columna Izquierda: Lectura y Texto Completo -->
                         <div class="lg:col-span-7 flex flex-col gap-6">
                             <div class="flex items-center justify-between gap-4 flex-wrap">
                                 <span class="px-3.5 py-1 rounded-full theme-surface theme-accent font-bold text-sm border flex items-center gap-2">
@@ -1585,27 +1627,16 @@ Escriba o pegue aquí el contenido de su consejo médico...</p>
                             <div class="theme-input p-6 rounded-xl border-l-4 border-[#af3a03] shadow-inner text-lg leading-relaxed">
                                 <p class="font-semibold">El caso instrumental nos indica el con qué se está haciendo algo, como nuestra preposición "con"</p>
                             </div>
-
-                            <!-- Reproductor de Audio Grabado -->
-                            <div class="p-4 rounded-xl theme-surface border flex flex-col gap-2">
-                                <div class="flex items-center justify-between text-sm font-bold">
-                                    <span class="flex items-center gap-2 theme-accent">
-                                        <i class="fa-solid fa-microphone"></i> Audio Grabado por su Médico
-                                    </span>
-                                </div>
-                                <audio controls class="w-full mt-1">
-                                    <source src="instrumental-en-polaco/audio_instrumental-en-polaco.wav" type="audio/wav">
-                                    Su navegador no soporta el reproductor de audio.
-                                </audio>
-                            </div>
                         </div>
 
-                        <!-- Columna Derecha: Reproductor de Video Educativo MP4 -->
-                        <div class="lg:col-span-5 flex flex-col gap-4">
-                            <div class="bg-[#282828] p-3 rounded-2xl border-2 border-[#bdae93] dark:border-[#504945] shadow-md flex flex-col gap-3">
+                        <!-- Columna Derecha: Reproductor de Video Educativo MP4 + Reproductor de Audio -->
+                        <div class="lg:col-span-5 flex flex-col gap-5">
+                            
+                            <!-- Video Player Box -->
+                            <div class="bg-[#282828] p-3.5 rounded-2xl border-2 border-[#bdae93] dark:border-[#504945] shadow-md flex flex-col gap-3">
                                 <div class="flex items-center justify-between px-2 text-xs font-bold text-[#ede679]">
                                     <span class="flex items-center gap-1.5">
-                                        <i class="fa-solid fa-film text-[#fe8019]"></i> Video Educativo con Subtítulos
+                                        <i class="fa-solid fa-film text-[#fe8019]"></i> Video Educativo con Leyenda
                                     </span>
                                     <span class="bg-[#3c3836] px-2 py-0.5 rounded text-[#fbf1c7] flex items-center gap-1">
                                         <i class="fa-solid fa-circle-play text-xs text-[#b8bb26]"></i> HD 720p
@@ -1616,6 +1647,20 @@ Escriba o pegue aquí el contenido de su consejo médico...</p>
                                     Su navegador no soporta la reproducción de video MP4.
                                 </video>
                             </div>
+
+                            <!-- Reproductor de Audio Grabado (Debajo del Video) -->
+                            <div class="p-4 rounded-xl theme-surface border flex flex-col gap-2 shadow-sm">
+                                <div class="flex items-center justify-between text-sm font-bold">
+                                    <span class="flex items-center gap-2 theme-accent">
+                                        <i class="fa-solid fa-microphone"></i> Audio Grabado por su Médico
+                                    </span>
+                                </div>
+                                <audio controls class="w-full mt-1">
+                                    <source src="instrumental-en-polaco/audio_instrumental-en-polaco.wav" type="audio/wav">
+                                    Su navegador no soporta el reproductor de audio.
+                                </audio>
+                            </div>
+
                         </div>
 
                     </div>
@@ -1625,7 +1670,7 @@ Escriba o pegue aquí el contenido de su consejo médico...</p>
                 <article id="card-acusativo" class="scroll-mt-24 flex flex-col theme-card rounded-2xl border-2 shadow-sm overflow-hidden mb-10 transition-colors">
                     <div class="p-6 lg:p-8 grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
                         
-                        <!-- Columna Izquierda: Lectura y Audio -->
+                        <!-- Columna Izquierda: Lectura y Texto Completo -->
                         <div class="lg:col-span-7 flex flex-col gap-6">
                             <div class="flex items-center justify-between gap-4 flex-wrap">
                                 <span class="px-3.5 py-1 rounded-full theme-surface theme-accent font-bold text-sm border flex items-center gap-2">
@@ -1666,27 +1711,16 @@ Escriba o pegue aquí el contenido de su consejo médico...</p>
                             <div class="theme-input p-6 rounded-xl border-l-4 border-[#af3a03] shadow-inner text-lg leading-relaxed">
                                 <p class="font-semibold">El caso acusativo marca el objeto directo de una oración.</p>
                             </div>
-
-                            <!-- Reproductor de Audio Grabado -->
-                            <div class="p-4 rounded-xl theme-surface border flex flex-col gap-2">
-                                <div class="flex items-center justify-between text-sm font-bold">
-                                    <span class="flex items-center gap-2 theme-accent">
-                                        <i class="fa-solid fa-microphone"></i> Audio Grabado por su Médico
-                                    </span>
-                                </div>
-                                <audio controls class="w-full mt-1">
-                                    <source src="acusativo/audio_acusativo.wav" type="audio/wav">
-                                    Su navegador no soporta el reproductor de audio.
-                                </audio>
-                            </div>
                         </div>
 
-                        <!-- Columna Derecha: Reproductor de Video Educativo MP4 -->
-                        <div class="lg:col-span-5 flex flex-col gap-4">
-                            <div class="bg-[#282828] p-3 rounded-2xl border-2 border-[#bdae93] dark:border-[#504945] shadow-md flex flex-col gap-3">
+                        <!-- Columna Derecha: Reproductor de Video Educativo MP4 + Reproductor de Audio -->
+                        <div class="lg:col-span-5 flex flex-col gap-5">
+                            
+                            <!-- Video Player Box -->
+                            <div class="bg-[#282828] p-3.5 rounded-2xl border-2 border-[#bdae93] dark:border-[#504945] shadow-md flex flex-col gap-3">
                                 <div class="flex items-center justify-between px-2 text-xs font-bold text-[#ede679]">
                                     <span class="flex items-center gap-1.5">
-                                        <i class="fa-solid fa-film text-[#fe8019]"></i> Video Educativo con Subtítulos
+                                        <i class="fa-solid fa-film text-[#fe8019]"></i> Video Educativo con Leyenda
                                     </span>
                                     <span class="bg-[#3c3836] px-2 py-0.5 rounded text-[#fbf1c7] flex items-center gap-1">
                                         <i class="fa-solid fa-circle-play text-xs text-[#b8bb26]"></i> HD 720p
@@ -1697,6 +1731,20 @@ Escriba o pegue aquí el contenido de su consejo médico...</p>
                                     Su navegador no soporta la reproducción de video MP4.
                                 </video>
                             </div>
+
+                            <!-- Reproductor de Audio Grabado (Debajo del Video) -->
+                            <div class="p-4 rounded-xl theme-surface border flex flex-col gap-2 shadow-sm">
+                                <div class="flex items-center justify-between text-sm font-bold">
+                                    <span class="flex items-center gap-2 theme-accent">
+                                        <i class="fa-solid fa-microphone"></i> Audio Grabado por su Médico
+                                    </span>
+                                </div>
+                                <audio controls class="w-full mt-1">
+                                    <source src="acusativo/audio_acusativo.wav" type="audio/wav">
+                                    Su navegador no soporta el reproductor de audio.
+                                </audio>
+                            </div>
+
                         </div>
 
                     </div>
@@ -1706,7 +1754,7 @@ Escriba o pegue aquí el contenido de su consejo médico...</p>
                 <article id="card-nominativo" class="scroll-mt-24 flex flex-col theme-card rounded-2xl border-2 shadow-sm overflow-hidden mb-10 transition-colors">
                     <div class="p-6 lg:p-8 grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
                         
-                        <!-- Columna Izquierda: Lectura y Audio -->
+                        <!-- Columna Izquierda: Lectura y Texto Completo -->
                         <div class="lg:col-span-7 flex flex-col gap-6">
                             <div class="flex items-center justify-between gap-4 flex-wrap">
                                 <span class="px-3.5 py-1 rounded-full theme-surface theme-accent font-bold text-sm border flex items-center gap-2">
@@ -1747,27 +1795,16 @@ Escriba o pegue aquí el contenido de su consejo médico...</p>
                             <div class="theme-input p-6 rounded-xl border-l-4 border-[#af3a03] shadow-inner text-lg leading-relaxed">
                                 <p class="font-semibold">El caso nominativo marca al sujeto de la oración.</p>
                             </div>
-
-                            <!-- Reproductor de Audio Grabado -->
-                            <div class="p-4 rounded-xl theme-surface border flex flex-col gap-2">
-                                <div class="flex items-center justify-between text-sm font-bold">
-                                    <span class="flex items-center gap-2 theme-accent">
-                                        <i class="fa-solid fa-microphone"></i> Audio Grabado por su Médico
-                                    </span>
-                                </div>
-                                <audio controls class="w-full mt-1">
-                                    <source src="nominativo/audio_nominativo.wav" type="audio/wav">
-                                    Su navegador no soporta el reproductor de audio.
-                                </audio>
-                            </div>
                         </div>
 
-                        <!-- Columna Derecha: Reproductor de Video Educativo MP4 -->
-                        <div class="lg:col-span-5 flex flex-col gap-4">
-                            <div class="bg-[#282828] p-3 rounded-2xl border-2 border-[#bdae93] dark:border-[#504945] shadow-md flex flex-col gap-3">
+                        <!-- Columna Derecha: Reproductor de Video Educativo MP4 + Reproductor de Audio -->
+                        <div class="lg:col-span-5 flex flex-col gap-5">
+                            
+                            <!-- Video Player Box -->
+                            <div class="bg-[#282828] p-3.5 rounded-2xl border-2 border-[#bdae93] dark:border-[#504945] shadow-md flex flex-col gap-3">
                                 <div class="flex items-center justify-between px-2 text-xs font-bold text-[#ede679]">
                                     <span class="flex items-center gap-1.5">
-                                        <i class="fa-solid fa-film text-[#fe8019]"></i> Video Educativo con Subtítulos
+                                        <i class="fa-solid fa-film text-[#fe8019]"></i> Video Educativo con Leyenda
                                     </span>
                                     <span class="bg-[#3c3836] px-2 py-0.5 rounded text-[#fbf1c7] flex items-center gap-1">
                                         <i class="fa-solid fa-circle-play text-xs text-[#b8bb26]"></i> HD 720p
@@ -1778,6 +1815,20 @@ Escriba o pegue aquí el contenido de su consejo médico...</p>
                                     Su navegador no soporta la reproducción de video MP4.
                                 </video>
                             </div>
+
+                            <!-- Reproductor de Audio Grabado (Debajo del Video) -->
+                            <div class="p-4 rounded-xl theme-surface border flex flex-col gap-2 shadow-sm">
+                                <div class="flex items-center justify-between text-sm font-bold">
+                                    <span class="flex items-center gap-2 theme-accent">
+                                        <i class="fa-solid fa-microphone"></i> Audio Grabado por su Médico
+                                    </span>
+                                </div>
+                                <audio controls class="w-full mt-1">
+                                    <source src="nominativo/audio_nominativo.wav" type="audio/wav">
+                                    Su navegador no soporta el reproductor de audio.
+                                </audio>
+                            </div>
+
                         </div>
 
                     </div>
@@ -1787,7 +1838,7 @@ Escriba o pegue aquí el contenido de su consejo médico...</p>
                 <article id="card-genitivo" class="scroll-mt-24 flex flex-col theme-card rounded-2xl border-2 shadow-sm overflow-hidden mb-10 transition-colors">
                     <div class="p-6 lg:p-8 grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
                         
-                        <!-- Columna Izquierda: Lectura y Audio -->
+                        <!-- Columna Izquierda: Lectura y Texto Completo -->
                         <div class="lg:col-span-7 flex flex-col gap-6">
                             <div class="flex items-center justify-between gap-4 flex-wrap">
                                 <span class="px-3.5 py-1 rounded-full theme-surface theme-accent font-bold text-sm border flex items-center gap-2">
@@ -1828,27 +1879,16 @@ Escriba o pegue aquí el contenido de su consejo médico...</p>
                             <div class="theme-input p-6 rounded-xl border-l-4 border-[#af3a03] shadow-inner text-lg leading-relaxed">
                                 <p class="font-semibold">El caso genitivo indica pertenencia. Similar a la preposición "de" en español.</p>
                             </div>
-
-                            <!-- Reproductor de Audio Grabado -->
-                            <div class="p-4 rounded-xl theme-surface border flex flex-col gap-2">
-                                <div class="flex items-center justify-between text-sm font-bold">
-                                    <span class="flex items-center gap-2 theme-accent">
-                                        <i class="fa-solid fa-microphone"></i> Audio Grabado por su Médico
-                                    </span>
-                                </div>
-                                <audio controls class="w-full mt-1">
-                                    <source src="genitivo/audio_genitivo.wav" type="audio/wav">
-                                    Su navegador no soporta el reproductor de audio.
-                                </audio>
-                            </div>
                         </div>
 
-                        <!-- Columna Derecha: Reproductor de Video Educativo MP4 -->
-                        <div class="lg:col-span-5 flex flex-col gap-4">
-                            <div class="bg-[#282828] p-3 rounded-2xl border-2 border-[#bdae93] dark:border-[#504945] shadow-md flex flex-col gap-3">
+                        <!-- Columna Derecha: Reproductor de Video Educativo MP4 + Reproductor de Audio -->
+                        <div class="lg:col-span-5 flex flex-col gap-5">
+                            
+                            <!-- Video Player Box -->
+                            <div class="bg-[#282828] p-3.5 rounded-2xl border-2 border-[#bdae93] dark:border-[#504945] shadow-md flex flex-col gap-3">
                                 <div class="flex items-center justify-between px-2 text-xs font-bold text-[#ede679]">
                                     <span class="flex items-center gap-1.5">
-                                        <i class="fa-solid fa-film text-[#fe8019]"></i> Video Educativo con Subtítulos
+                                        <i class="fa-solid fa-film text-[#fe8019]"></i> Video Educativo con Leyenda
                                     </span>
                                     <span class="bg-[#3c3836] px-2 py-0.5 rounded text-[#fbf1c7] flex items-center gap-1">
                                         <i class="fa-solid fa-circle-play text-xs text-[#b8bb26]"></i> HD 720p
@@ -1859,6 +1899,20 @@ Escriba o pegue aquí el contenido de su consejo médico...</p>
                                     Su navegador no soporta la reproducción de video MP4.
                                 </video>
                             </div>
+
+                            <!-- Reproductor de Audio Grabado (Debajo del Video) -->
+                            <div class="p-4 rounded-xl theme-surface border flex flex-col gap-2 shadow-sm">
+                                <div class="flex items-center justify-between text-sm font-bold">
+                                    <span class="flex items-center gap-2 theme-accent">
+                                        <i class="fa-solid fa-microphone"></i> Audio Grabado por su Médico
+                                    </span>
+                                </div>
+                                <audio controls class="w-full mt-1">
+                                    <source src="genitivo/audio_genitivo.wav" type="audio/wav">
+                                    Su navegador no soporta el reproductor de audio.
+                                </audio>
+                            </div>
+
                         </div>
 
                     </div>
@@ -1868,7 +1922,7 @@ Escriba o pegue aquí el contenido de su consejo médico...</p>
                 <article id="card-dativo" class="scroll-mt-24 flex flex-col theme-card rounded-2xl border-2 shadow-sm overflow-hidden mb-10 transition-colors">
                     <div class="p-6 lg:p-8 grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
                         
-                        <!-- Columna Izquierda: Lectura y Audio -->
+                        <!-- Columna Izquierda: Lectura y Texto Completo -->
                         <div class="lg:col-span-7 flex flex-col gap-6">
                             <div class="flex items-center justify-between gap-4 flex-wrap">
                                 <span class="px-3.5 py-1 rounded-full theme-surface theme-accent font-bold text-sm border flex items-center gap-2">
@@ -1909,27 +1963,16 @@ Escriba o pegue aquí el contenido de su consejo médico...</p>
                             <div class="theme-input p-6 rounded-xl border-l-4 border-[#af3a03] shadow-inner text-lg leading-relaxed">
                                 <p class="font-semibold">¿Cómo funciona el caso dativo en la lengua alemana?</p>
                             </div>
-
-                            <!-- Reproductor de Audio Grabado -->
-                            <div class="p-4 rounded-xl theme-surface border flex flex-col gap-2">
-                                <div class="flex items-center justify-between text-sm font-bold">
-                                    <span class="flex items-center gap-2 theme-accent">
-                                        <i class="fa-solid fa-microphone"></i> Audio Grabado por su Médico
-                                    </span>
-                                </div>
-                                <audio controls class="w-full mt-1">
-                                    <source src="dativo/audio_dativo.wav" type="audio/wav">
-                                    Su navegador no soporta el reproductor de audio.
-                                </audio>
-                            </div>
                         </div>
 
-                        <!-- Columna Derecha: Reproductor de Video Educativo MP4 -->
-                        <div class="lg:col-span-5 flex flex-col gap-4">
-                            <div class="bg-[#282828] p-3 rounded-2xl border-2 border-[#bdae93] dark:border-[#504945] shadow-md flex flex-col gap-3">
+                        <!-- Columna Derecha: Reproductor de Video Educativo MP4 + Reproductor de Audio -->
+                        <div class="lg:col-span-5 flex flex-col gap-5">
+                            
+                            <!-- Video Player Box -->
+                            <div class="bg-[#282828] p-3.5 rounded-2xl border-2 border-[#bdae93] dark:border-[#504945] shadow-md flex flex-col gap-3">
                                 <div class="flex items-center justify-between px-2 text-xs font-bold text-[#ede679]">
                                     <span class="flex items-center gap-1.5">
-                                        <i class="fa-solid fa-film text-[#fe8019]"></i> Video Educativo con Subtítulos
+                                        <i class="fa-solid fa-film text-[#fe8019]"></i> Video Educativo con Leyenda
                                     </span>
                                     <span class="bg-[#3c3836] px-2 py-0.5 rounded text-[#fbf1c7] flex items-center gap-1">
                                         <i class="fa-solid fa-circle-play text-xs text-[#b8bb26]"></i> HD 720p
@@ -1940,6 +1983,20 @@ Escriba o pegue aquí el contenido de su consejo médico...</p>
                                     Su navegador no soporta la reproducción de video MP4.
                                 </video>
                             </div>
+
+                            <!-- Reproductor de Audio Grabado (Debajo del Video) -->
+                            <div class="p-4 rounded-xl theme-surface border flex flex-col gap-2 shadow-sm">
+                                <div class="flex items-center justify-between text-sm font-bold">
+                                    <span class="flex items-center gap-2 theme-accent">
+                                        <i class="fa-solid fa-microphone"></i> Audio Grabado por su Médico
+                                    </span>
+                                </div>
+                                <audio controls class="w-full mt-1">
+                                    <source src="dativo/audio_dativo.wav" type="audio/wav">
+                                    Su navegador no soporta el reproductor de audio.
+                                </audio>
+                            </div>
+
                         </div>
 
                     </div>
