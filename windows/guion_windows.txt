@@ -1,0 +1,3 @@
+Microsoft Windows o simplemente Windows es el nombre de una familia de distribuciones de software y sistemas operativos para PC, servidores, sistemas empotrados y anteriormente teléfonos inteligentes desarrollados y vendidos por Microsoft desde 1985 y disponibles para múltiples arquitecturas, tales como x86, x86-64 (x64) y ARM.
+
+Originalmente (en Windows 1.0, 2.0 y 3.x) era solamente un software que aportaba interfaz gráfica de usuario (GUI, Graphical User Interface) basada en ventanas para MS-DOS (Microsoft Disk Operating System), que por aquel entonces contaba con una interfaz basada en línea de comandos.
