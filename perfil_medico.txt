@@ -2,7 +2,7 @@ Nombre: Manhattan
 
 Matrícula Médica: 666/912
 
-Especialidad: Medicina Molecular.
+Especialidad: medicina molecular
 
 Biografía:
 El Watchman más poderoso.
