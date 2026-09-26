@@ -1,8 +1,8 @@
-Nombre: Dr.Tux
+Nombre: Dr.Pingu
 
 Matrícula Médica: 666/912
 
-Especialidad: medicina molecular
+Especialidad: aletologo
 
 Biografía:
-El Watchman más poderoso.
+El pingüino más sabio de toda la patagonia
