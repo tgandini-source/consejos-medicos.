@@ -1,6 +1,6 @@
 Nombre: Dr.Pingu
 
-Matrícula Médica: 666/912
+Matrícula Médica: 669/912
 
 Especialidad: aletologo
 
