@@ -1,0 +1,3 @@
+Cada neurona se comunica, al menos, con otras mil neuronas y puede recibir, simultáneamente, hasta diez veces más conexiones de otras. Se estima que en el cerebro humano adulto hay por lo menos 10^14 conexiones sinápticas (entre 100 y 500 billones). En niños el número alcanzaría los 1000 billones, pero este número disminuye con el paso de los años, estabilizándose en la edad adulta.
+
+Las sinapsis permiten a las neuronas del sistema nervioso central formar una red de circuitos neuronales. Son cruciales para los procesos biológicos que subyacen bajo la percepción y el pensamiento. También son el sistema mediante el cual el sistema nervioso conecta y controla todos los sistemas del cuerpo.

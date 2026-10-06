@@ -1,0 +1,3 @@
+GNU/Linux (pronunciado oficialmente como ñu linux o también ge-ene-u linux en español)es una familia de sistemas operativos tipo Unix compuesto por software libre y de código abierto. GNU/Linux surge de las contribuciones de varios proyectos de software, entre los cuales destacan GNU (iniciado por Richard Stallman en 1983) y el núcleo Linux (comenzado por Linus Torvalds en 1991).
+
+A pesar de que comúnmente se llama Linux a todo el sistema operativo, Linux es solo el nombre del núcleo. Un sistema GNU/Linux completo incluye también el sistema operativo GNU.Existen derivados que usan el núcleo Linux sin GNU, como Android, y también existen derivados de GNU sin el núcleo Linux como GNU/Hurd.

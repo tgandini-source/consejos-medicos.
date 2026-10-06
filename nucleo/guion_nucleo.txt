@@ -1,0 +1,3 @@
+El núcleo Linux es un núcleo de sistema operativo tipo Unix, monolítico, modular y multitarea. Linux es software libre y de código abierto. Fue originalmente escrito en 1991 por Linus Torvalds para su PC basada en i386, y pronto fue adoptado como el núcleo para el sistema operativo GNU/Linux, que fue creado como un reemplazo libre para Unix.
+
+Linux se proporciona bajo la Licencia Pública General de GNU versión 2, pero contiene archivos bajo otras licencias compatibles. Desde finales de la década de 1990, ha sido incluido como parte de un gran número de distribuciones de sistemas operativos, muchas de las cuales también se denominan comúnmente Linux.
